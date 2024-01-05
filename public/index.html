@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/img/logoGroup.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Macmay Maultifarious Company"
+    />
+
+   
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <style>
+      *{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .spinner{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        background-color: white;
+        z-index: 7999;       
+      }
+      
+      .img{
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: loadIn 2s ease-in-out;
+      }
+    
+     
+     
+      @keyframes loadIn {
+        0%{
+          rotate: 0;
+          height: 90px;
+          width: 90px
+        }
+        100%{
+          rotate: 360deg;
+          height: 20px;
+          width: 20px;
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!-- a: -->
+    <div class="spinner" id="spinner">
+      <img src="/img/logoGroup.png" alt="" class="img">
+    </div>
+
+    <div id="root">
+    </div>
+  
+  </body>
+</html>
