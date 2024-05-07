@@ -1,35 +1,82 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, createContext, useEffect, Suspense } from 'react'
+import { createBrowserRouter, RouterProvider, Outlet, Link } from 'react-router-dom';
+import './assets/styles/index.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const Home = React.lazy(() => delayLoad(import('./Pages/Home/Home')))
+const NavBar = React.lazy(() => delayLoad(import('./Components/Main/Navbar')))
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+
+
+
+function delayLoad(promise) {
+  return new Promise(resolve => {
+    setTimeout(resolve, 0);
+  }).then(() =>promise);
+}
+
+export const AppContext = createContext()
+
+const Layout = () =>{ 
+  const [ currentNav, setCurrentNav ] = useState(0)
+  const [ navBg, setNavBg ] = useState('blue')
+  const [ currentDropDown, setCurrentDropDown ] = useState('')
+  const [ scrolledDown, setScrolledDown ] = useState(false)
+
+
+
+  return(
+    <div className='app'>
+
+      <AppContext.Provider value={{ currentNav, setCurrentNav, navBg, setNavBg, currentDropDown, setCurrentDropDown, scrolledDown, setScrolledDown }}>
+        <Suspense fallback={<></>}>
+          <NavBar />
+        </Suspense>
+
+          <div className='d-flex w-full min-h-screen'>
+            <Outlet />
+            
+          </div>
+     
+      </AppContext.Provider>
+    </div>
   )
 }
 
-export default App
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children:[
+      {
+        path: '/',
+        element: 
+        <React.Suspense fallback={<div className='center h-screen bg-gray-300'>Loading...</div>}>
+          <Home />
+        </React.Suspense>
+      },
+     
+      {
+        path: '/*',
+        element: <p>Hello world</p>
+      }
+    ]
+  }
+])
+
+function App() {
+  
+
+  return (
+    <div className='App'>
+      <div>
+        <RouterProvider router={router} />
+
+      </div>
+    </div>
+  );
+
+
+}
+export default App;
+         

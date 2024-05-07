@@ -1,0 +1,59 @@
+I got an idea of creating a software company for startups
+    - we offer discounts to startups to getting started online - discounts on services like 
+        - web design and development
+        - Graphics design for flyers and logo design
+        - Branding and online identity creation
+        - Social media marketing and etc to get started
+
+    - Give startup tips and advices on social media
+    - create a webhosting server for startups to get online at a limited cost
+    - allow startups to create an account to post jobs and open source projects for contribution
+    - allow people to register and seek for jobs or open source projects to contribute to
+    - a platform for people to share their mind and enhance relationship with startups and people
+
+    
+
+
+structure
+    - A site for all - containing home, about, services and introduction to our services
+
+    - a platform to strartups to register and verify their identity with details and identity of the founder
+        the platform is dedicated to the startup to post and manage job processing and project contributions
+
+    -a platform for individuals to search and apply for jobs and contributions
+    
+    - a platform for sociallization
+        
+        
+
+platforms:
+    - General website for intro familiarity, docs etc
+    - platform for job and collaboration
+        - startup:
+            - create account
+            - verify identity
+            - edit profile
+            - create job 
+            - view applicants and select applicant(s)
+            - share profile to seek grant oppurtunities
+            - apply for discounts
+        
+        - user:
+            - create account 
+            - verify identity
+            - edit profile 
+            - add resume
+            - apply for jobs
+            - contribute to open source
+            - upgrade to startup
+            
+
+    - admin platform to manage all
+    - 
+
+
+
+
+
+
+

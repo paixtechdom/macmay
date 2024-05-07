@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    ---blue: #000080;
+    ---orange: #FFA500;
+    ---green: #008000;
+}
+
+*{
+    font-family: 'Poppins', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.bg-blue-fade{
+    background-color: #cacae7;
+}
+.bg-green-fade{
+    background-color: #d3f0d3;
+}
+.bg-orange-fade{
+    background-color: #f3edd9;
+}
+
+
+.bg-blue{
+    background-color: var(---blue);
+}
+.bg-orange{
+    background-color: var(---orange);
+}
+.bg-green{
+    background-color: var(---green);
+}
+
+.text-blue{
+    color: var(---blue)
+}
+.text-orange{
+    color: var(---orange)
+}
+.text-green{
+    color: var(---green)
+}
+
+.border-blue{
+    border-color: var(---blue)
+}
+.border-orange{
+    border-color: var(---orange)
+}
+.border-green{
+    border-color: var(---green)
+}
+
+.border-blue-fade{
+    border-color: #0000801a;
+}
+.border-orange-fade{
+    border-color: #ffa6006e;
+}
+.border-green-fade{
+    border-color: #00800027;
+}
+
+.shadow-orange{
+    box-shadow: 0px 0px 25px 5px var(---orange);
+}
+.shadow-blue{
+    box-shadow: 0px 0px 25px 5px var(---blue);
+}
+.shadow-green{
+    box-shadow: 0px 0px 25px 5px var(---green);
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-small{
+    font-size: 12px;
+}
