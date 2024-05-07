@@ -68,13 +68,13 @@ const NavInfo = [
 const HeroContent = [
     {
         title: 'Macmay Multifarious Company',
-        desc: 'Macmay is carefully positioned to render savings and investment services to clients/members',
+        desc: 'We are a company which recognises the general lack of proper saving culture and investment practice amongst members of the society and we have stepped in to bridge the gap.',
         img: investing,
         color: 'blue'
     },
     {
         title: 'Macmay Farms & Agro Company',
-        desc: 'Agriculture is a major system that brings about balance in the society and a long aged sector that the world trusts in for continued food production.',
+        desc: 'We are available to render our service to as many people that will be in need of Agricultural products, and also for the purpose of buying and selling locally and internationally as well as investing in any related Agriculture reforms.',
         img: foodProcessing,
         color: 'green'
     },
@@ -86,7 +86,34 @@ const HeroContent = [
     }
 ]
 
+const ContactInfo = [
+    {
+        title: 'No. 85, Orhuvworun Road, Opposite Visa Junction; Udu Delta State, Nigeria',
+        icon: 'geo-alt-fill',
+        link: ''
+    },
+    {
+        title: '+234 916 124 7130',
+        icon: 'telephone-fill',
+        link: 'tel:+2349161247130'
+    },
+    {
+        title: 'cec@macmaygroupofcompany.com',
+        icon: 'envelope-fill',
+        link: 'mailto:cec@macmaygroupofcompany.com'
+    },
+    {
+        icon: 'whatsapp',
+        link: '  +2348111779288'
+    },
+    {
+        icon: 'facebook',
+        link: '  officialmacmaymultifariousCoLtd'
+    },
+
+]
 
 
 
-export { NavInfo, Logo, HeroContent }
+
+export { NavInfo, Logo, HeroContent, ContactInfo }

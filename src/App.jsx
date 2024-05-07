@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider, Outlet, Link } from 'react-router-
 import './assets/styles/index.css'
 
 const Home = React.lazy(() => delayLoad(import('./Pages/Home/Home')))
+const Footer = React.lazy(() => delayLoad(import('./Components/Main/Footer')))
 const NavBar = React.lazy(() => delayLoad(import('./Components/Main/Navbar')))
 
 
@@ -35,8 +36,11 @@ const Layout = () =>{
 
           <div className='d-flex w-full min-h-screen'>
             <Outlet />
-            
           </div>
+          
+        <Suspense fallback={<></>}>
+          <Footer />
+        </Suspense>
      
       </AppContext.Provider>
     </div>

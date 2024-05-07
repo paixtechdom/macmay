@@ -35,7 +35,7 @@ export const ImageAndText = ({id, title, desc, img, className, iconText, icon, s
     const navigate = useNavigate()
     return(
         
-        <section id={id} className={`bg-${bg}-fade flex justify-center p y-[12ch] lg:mb-[8ch] text-gray-100 h-fit -90 items-center relative lg:h-screen overflow-hidden`}>            
+        <section id={id} className={`bg-${bg}-fade flex justify-center  text-gray-100 h-fit items-center relative lg:h-screen overflow-hidden`}>            
             <div className={`cente r h-[90%] flex items-start lg:items-center z-10 flex-col lg:flex-row  w-11/12 lg:w-10/12 gap-[5ch] lg:gap-[0ch] xl:gap-[5ch] py-[10vh] lg:pt-0 overflow-hi dden`}>
                 
                 <div className={`flex flex-col gap-4 lg:w-10/12 borde r-l border- t border-${bg} rounded-tl-3xl justify-center `}>

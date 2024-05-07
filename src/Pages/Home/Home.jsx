@@ -15,8 +15,7 @@ const Home = () => {
     }, [])
     return(
         <main className="flex flex-col min-h-screen z-10 w-full gap-9">
-            <div className="h-[15vh] w-full"></div>
-            <Products />
+            {/* <div className="h-[15vh] w-full"></div> */}
             <Hero />
             <ImageAndText 
                 id={'testing'}
@@ -28,7 +27,6 @@ const Home = () => {
                 bg={'green'}
             />
             <Get />
-           
 
             <ImageAndText 
                 id={'trying'}
@@ -37,8 +35,11 @@ const Home = () => {
                 desc={['Lorem ipi vel quibusdam enim reiciendis quos soluta a distinctio, magnam sit architecto nesciunt reprehenderit at quidem tempore neque natus harum blanditiis commodi.', 'Lorit at quidem tempore neque natus harum blanditiis commodi.']}
                 iconText={'Read more'}
                 icon={'arrow-down'}
-                bg={'orange'}
+                bg={'blue'}
             />
+            <Products />
+           
+
             <ImageAndText 
                 id={'tryingsnd'}
                 title={'This and That Title'}
@@ -46,7 +47,7 @@ const Home = () => {
                 desc={['Lorem ipi vel quibusdam enim reiciendis quos soluta a distinctio, magnam sit architecto nesciunt reprehenderit at quidem tempore neque natus harum blanditiis commodi.', 'Lorit at quidem tempore neque natus harum blanditiis commodi.']}
                 iconText={'Read more'}
                 icon={'arrow-down'}
-                bg={'blue'}
+                bg={'green'}
             />
 
             
