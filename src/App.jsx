@@ -17,7 +17,7 @@ const Footer = React.lazy(() => delayLoad(import('./Components/Main/Footer')))
 
 function delayLoad(promise) {
   return new Promise(resolve => {
-    setTimeout(resolve, 3000);
+    setTimeout(resolve, 0);
   }).then(() =>promise);
 }
 
@@ -38,9 +38,9 @@ const Layout = () =>{
           <NavBar />
         </Suspense>
 
-          <div className='d-flex w-full min-h-[50vh]'>
+          {/* <div className='d-flex w-full min-h-[50vh]'> */}
             <Outlet />
-          </div>
+          {/* </div> */}
           
         <Suspense fallback={<></>}>
           <Footer />

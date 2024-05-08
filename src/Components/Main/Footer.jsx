@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ContactInfo, NavInfo } from "../../assets/Constant";
 import { useContext } from "react";
 import { AppContext } from '../../App'
+import { Parallax } from "../Parallax";
 
 const Footer = () => {
     const { currentNav } = useContext(AppContext)

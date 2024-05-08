@@ -8,6 +8,7 @@ import { AppContext } from '../../App'
 import { ImageAndText } from '../../Components/ImageAndText'
 import { PagesHero } from '../../Components/PagesHero'
 import { BreadCrumbs } from '../../Components/BreadCrumbs'
+import { Parallax, ParallaxRight } from '../../Components/Parallax'
 
 
 const About = () => {
@@ -77,7 +78,7 @@ const About = () => {
                                 <h4 className='text-xl font-bold'>{p.title}</h4>
                                 <p>DR. Tiamiyu Collins</p>
                             </div>
-                        }/>
+                            }/>
                             
                         ))
                     }

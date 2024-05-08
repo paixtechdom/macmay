@@ -29,7 +29,7 @@ const Home = () => {
             <Get data={ServicesList} title={['Our', 'Services']}/>
             <ImageAndText 
                 id={'trying'}
-                title={'This and That Title'}
+                title={'That and This Title'}
                 img={img2}
                 desc={['Lorem ipi vel quibusdam enim reiciendis quos soluta a distinctio, magnam sit architecto nesciunt reprehenderit at quidem tempore neque natus harum blanditiis commodi.', 'Lorit at quidem tempore neque natus harum blanditiis commodi.']}
                 iconText={'Read more'}
@@ -42,7 +42,7 @@ const Home = () => {
 
             <ImageAndText 
                 id={'tryingsnd'}
-                title={'This and That Title'}
+                title={'That and That Title'}
                 img={img3}
                 desc={['Lorem ipi vel quibusdam enim reiciendis quos soluta a distinctio, magnam sit architecto nesciunt reprehenderit at quidem tempore neque natus harum blanditiis commodi.', 'Lorit at quidem tempore neque natus harum blanditiis commodi.']}
                 iconText={'Read more'}

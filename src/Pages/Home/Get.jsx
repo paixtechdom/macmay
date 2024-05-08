@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import img from '../../assets/images/IMG_20231017_051604_314.jpg'
 import { AppContext } from '../../App'
+import { Parallax, ParallaxRight } from '../../Components/Parallax'
 
 
 export const Get = ({data, title}) => {
@@ -37,7 +38,9 @@ export const Get = ({data, title}) => {
                 <div className="flex flex-col w-full lg:w-6/12 justify-center items-end text-5xl pr-3 text-white font-bold border-r border-orange gap-3">
                     {
                         title.map((t, i) => (
-                            <h2 key={i} className=''>{t}</h2>
+                            <Parallax id={t} key={i}>
+                                <h2 key={i} className=''>{t}</h2>
+                            </Parallax>
 
                         ))
                     }
@@ -46,16 +49,18 @@ export const Get = ({data, title}) => {
                 <div className="w-full lg:w-6/12 text-white  flex flex-col justify-center items-center h-full gap-3">
                     {
                         data.map((g, i) => (
-                            <div key={i} className="flex flex-col  lg:w-11/12 gap-1 overflow-hidden">
-                                <div className="flex justify-start items-start font-bold text-xl gap-8 hover:bg-white hover:bg-opacity-10 transition-all duration-500 p-3 rounded-xl cursor-pointer" onClick={() => {
-                                        setCurrentGet(currentGet == i ? 0 : i)
-                                    }}>
-                                    <h3>{g.title}</h3>
-                                    <i className={`bi bi-${currentGet == i ? 'eye-slash-fill' : 'eye-fill'}`} ></i>
-                                </div>
+                            <ParallaxRight key={i} id={g.title} clas={'lg:w-11/12'}>
+                                <div key={i} className="flex flex-col gap-1 overflow-hidden">
+                                    <div className="flex justify-start items-start font-bold text-xl gap-8 hover:bg-white hover:bg-opacity-10 transition-all duration-500 p-3 rounded-xl cursor-pointer" onClick={() => {
+                                            setCurrentGet(currentGet == i ? 0 : i)
+                                        }}>
+                                        <h3>{g.title}</h3>
+                                        <i className={`bi bi-${currentGet == i ? 'eye-slash-fill' : 'eye-fill'}`} ></i>
+                                    </div>
 
-                                <p className={`px-3 text-blue transition-all duration-500 tracking-wide leading-relaxed ${currentGet == i ? `h-[vh] bg-white py-3 rounded-xl` : 'h-0'}`}>{g.desc}</p>
-                            </div>
+                                    <p className={`px-3 text-blue transition-all duration-500 tracking-wide leading-relaxed ${currentGet == i ? `h-[vh] bg-white py-3 rounded-xl` : 'h-0'}`}>{g.desc}</p>
+                                </div>
+                            </ParallaxRight>
                         ))
                     }
                 </div>

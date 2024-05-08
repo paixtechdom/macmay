@@ -118,27 +118,27 @@ const ServicesList = [
 
 const FAQs = [
     {
-        title: 'Lorem 20',
+        title: 'Questtion 1',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, delectus! Laborum iusto aliquam necessitatibus voluptatem expedita obcaecati velit voluptatibus vel pariatur'
     },
     {
-        title: 'Lorem 20',
+        title: 'Questtion 2',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, delectus! Laborum iusto aliquam necessitatibus voluptatem expedita obcaecat'
     },
     {
-        title: 'Lorem 20',
+        title: 'Questtion 3',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, delectus! Laborum iusto aliquam necessitatibus voluptatem expedita obcaecati velit voluptatibus '
     },
     {
-        title: 'Lorem 20',
+        title: 'Questtion 4',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, delectus! Laborum iusto aliquam necessitatibus voluptatem expedita obcaecati velit voluptatibus '
     },
     {
-        title: 'Lorem 20',
+        title: 'Questtion 5',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, delectus! Laborum iusto aliquam necessitatibus voluptatem expedita obcaecati velit voluptatibus '
     },
     {
-        title: 'Lorem 20',
+        title: 'Questtion 6',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, delectus! Laborum iusto aliquam necessitatibus voluptatem expedita obcaecati velit voluptatibus '
     },
 ]

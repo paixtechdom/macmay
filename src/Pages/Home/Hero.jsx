@@ -5,6 +5,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component"
 import 'react-lazy-load-image-component/src/effects/blur.css'
 import 'react-lazy-load-image-component/src/effects/opacity.css'
 import { AppContext } from "../../App"
+import { Parallax, ParallaxRight } from "../../Components/Parallax"
 
 export const Hero = () => {
     const { scrolledDown, setScrolledDown } = useContext(AppContext)
@@ -45,7 +46,7 @@ export const Hero = () => {
         <>
             <section className="h-fit lg:h-screen w-full center relative overflow-hidden bg-white">
 
-                {/* <div className={`absolute bg-green w-[300px] h-[300px] left-0 -translate-x-[200px] top-[60%] rounded-full transition-all duration-1000`}></div> */}
+                <div className={`absolute  shadow-blue w-[2000px]  h-[1500px]  -translate-y-[900px] top-0 rounded-full transition-all duration-1000 bg-gray-50`}></div>
 
                 <div className="absolute hidden lg:block lg:flex flex w-full justify-between items-center z-20">
                     <div className="bi bi-chevron-left text-5xl text-gray-300 cursor-pointer h-[250px] center rounded-full w-[100px] lg:w-[150px] p-6 rounded-r-3xl transition-all duration-1000 hover:bg-black hover:bg-opacity-20"  onClick={() => setCurrentSlide(currentSlide == 0 ? HeroContent.length - 1 : prev => prev - 1)}></div>
@@ -73,29 +74,32 @@ export const Hero = () => {
                     <div className="flex flex-col lg:flex-row justify-center items-center transition-all duration-1000 h-full w-full gap-[10ch] mt-[15vh] lg:mt-0" style={{
 
                     }}>
-                        {
-                            HeroContent.map((d, i) => (
-                                i == currentSlide &&
-                                <div key={i} className="flex relative lg:w-9/12 h-full center">
-                                    <div className="w-full z-10 h-full z-20 flex items-center justify-start">
-                                        <div className="w-full flex flex-col gap-4">
-                                            <h1 className={`text-blue font-bold text-5xl lg:text-6xl font-b old`}>{d.title}</h1>
-                                            <p className={`text-blue text- sm lg:text-lg tracking-wide leading-relaxed`}>{d.desc}</p>
-                                            <div className="flex flex-col md:flex-row gap-5">
-                                                <Button text={'Learn More'} className={'w-fit'} color={'blue'}/>
-                                                <Button text={'Contact Us'} className={'w-fit'} type={'primary'} icon={'telephone-fill'} color={'white'}/>
+                        <Parallax id={'hero text'} clas={'lg:w-9/12'}>
+                            {
+                                HeroContent.map((d, i) => (
+                                    i == currentSlide &&
+                                    <div key={i} className="flex relative h-full center">
+                                        <div className="w-full z-10 h-full z-20 flex items-center justify-start">
+                                            <div className="w-full flex flex-col gap-4">
+                                                <h1 className={`text-blue font-bold text-5xl lg:text-6xl font-b old`}>{d.title}</h1>
+                                                <p className={`text-blue text- sm lg:text-lg tracking-wide leading-relaxed`}>{d.desc}</p>
+                                                <div className="flex flex-col md:flex-row gap-5">
+                                                    <Button text={'Learn More'} className={'w-fit'} color={'blue'}/>
+                                                    <Button text={'Contact Us'} className={'w-fit'} type={'primary'} icon={'telephone-fill'} color={'white'}/>
+
+                                                </div>
 
                                             </div>
 
                                         </div>
 
                                     </div>
+                                ))
+                            }
 
-                                </div>
-                            ))
-                        }
+                        </Parallax>
 
-                        <div className="relative w-full lg:w-6/12 max- h-[55vh] lg:h-[50vh] flex flex-col">
+                        <div className="relative lg:w-6/12 w-full max- h-[55vh] lg:h-[50vh] flex flex-col">
                             {
                                 HeroContent.map((d, i) => (
                                     <div key={i} className={`absolute center overflow-hidden w-full h-full rounded-xl transition-all duration-500 ${currentSlide == i ? `-${d.color}` : 'opacity-10'} ${d.color} z-10`} style={{
@@ -111,6 +115,7 @@ export const Hero = () => {
                                     </div>
                                 ))
                             }
+
 
                         </div>
                     </div>

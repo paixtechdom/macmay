@@ -21,7 +21,7 @@ const NavBar = () => {
 
     return(
         <>
-        <header className={`center fixed w-full h-[10vh] z-50 transition-all duration-1000 bg-white } ${scrolledDown ? `shadow-xl` : ''}`}>
+        <header className={`center fixed w-full h-[10vh] z-50 transition-all duration-1000  ${scrolledDown ? `shadow-xl bg-white` : ''}`}>
             <div className="flex items-center justify-between w-11/12 lg:w-10/12">
 
                 <Link to={'/'} className='w-3/12 md:w-4/12'>

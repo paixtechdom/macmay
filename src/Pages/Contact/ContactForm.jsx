@@ -1,5 +1,7 @@
 import { useState } from "react"
 import img from '../../assets/images/IMG_20231017_045825_4862.jpg'
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import { Parallax, ParallaxRight } from "../../Components/Parallax"
 
 
 export const ContactForm = () => {
@@ -16,39 +18,52 @@ export const ContactForm = () => {
             <div className="center flex-col lg:flex-row w-full gap-[100px]">
                 <div className="flex flex-col w-full gap-5 lg:w-6/12 shadow-xl p-9 rounded-3xl">
                     <h2 className="text-5xl font-bold text-green w-full mb-[5vh]">Send Us A Message</h2>
-                    <FormInput value={name} setValue={setName} icon={'person-fill'} label={'Enter Your Name'} htmlFor={'Name'} type={'text'}/>
-                    <FormInput value={email} setValue={setEmail} icon={'envelope-fill'} label={'Enter Your Email'} htmlFor={'Email'} type={'email'}/>
-                    <FormInput value={subject} setValue={setSubject} icon={'person-fill'} label={'Subject'} htmlFor={'Subject'} type={'text'}/>
+                    <Parallax id={'name'}>
+                        <FormInput value={name} setValue={setName} icon={'person-fill'} label={'Full Name (Required)'} htmlFor={'Name'} type={'text'}/>
+                    </Parallax>
+                    <ParallaxRight id={'email'}>
+                        <FormInput value={email} setValue={setEmail} icon={'envelope-fill'} label={'Email (Required)'} htmlFor={'Email'} type={'email'}/>
+                    </ParallaxRight>
+                    <Parallax id={'subject'}>
+                        <FormInput value={subject} setValue={setSubject} icon={'person-fill'} label={'Subject'} htmlFor={'Subject'} type={'text'}/>
+                    </Parallax>
 
+                    <ParallaxRight id={'message'}>
+                        <div className="center flex-col w-full gap-2">
+                            <div className="flex w-full items-center gap-3">
+                                <i className={`bi bi-chat-dots-fill center text-blue`}></i>
+                                <label htmlFor={'Message'} className="text-blue w-full">Enter Your Message</label>
 
+                            </div>
 
-                    <div className="center flex-col w-full gap-2">
-                        <div className="flex w-full items-center gap-3">
-                            <i className={`bi bi-chat-dots-fill center text-blue`}></i>
-                            <label htmlFor={'Message'} className="text-blue w-full">Enter Your Message</label>
+                            <textarea value={message} onChange={(e) => {
+                                setMessage(e.target.value)
+                            }} 
+                            className="w-full outline-none bg-transparent px-4 text-blue min-h-[15vh] max-h-[15vh]  rounded-xl w-full shadow-xl bg-gray-100"></textarea>
+                        </div>
+                    </ParallaxRight>
+                    <Parallax id={'send'}>
+                        <div className="w-full bg-blue mt-4 shadow-xl bg-gray-100 rounded-2xl h-[8vh] center text-xl text-white">
+                            {
+                                sending ? 'Sending Message' : 
+                                    <>
+                                        Send Message
+                                        <i className="bi bi-cursor-fill ml-3"></i>
+                                    </>
+                            }
 
                         </div>
+                    </Parallax>
 
-                        <textarea value={message} onChange={(e) => {
-                            setMessage(e.target.value)
-                        }} 
-                        className="w-full outline-none bg-transparent px-4 text-blue min-h-[15vh] max-h-[15vh]  rounded-xl w-full shadow-xl bg-gray-100"></textarea>
-                    </div>
-
-                    <div className="w-full bg-blue mt-4 shadow-xl bg-gray-100 rounded-2xl h-[8vh] center text-xl text-white">
-                        {
-                            sending ? 'Sending Message' : 
-                                <>
-                                    Send Message
-                                    <i className="bi bi-cursor-fill ml-3"></i>
-                                </>
-                        }
-
-                    </div>
                 </div>
 
                 <div className="lg:w-6/12 flex justify-center lg:justify-end items-center">
-                   <img src={img} alt="Macmay Logo for Contact Image" className="rounded-2xl shadow-2xl w-9/12"/>
+                   <LazyLoadImage 
+                        src={img} 
+                        placeholderSrc="Macmay Logo for Contact Image" 
+                        className="rounded-2xl shadow-2xl w-9/12"
+                        effect="blur"
+                    />
                 </div>
 
 

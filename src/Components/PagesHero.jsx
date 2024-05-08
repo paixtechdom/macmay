@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { Button } from './Buttons'
 import { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../App'
+import { Parallax, ParallaxRight } from './Parallax'
 
 export const PagesHero = ({id, title, desc, img,  iconText, icon, scrollTo, navigateTo}) => {
     const navigate = useNavigate()
@@ -15,24 +16,29 @@ export const PagesHero = ({id, title, desc, img,  iconText, icon, scrollTo, navi
             <div className={`cente r h-[90%] flex items-start lg:items-center z-10 flex-col lg:flex-row  w-11/12 lg:w-10/12 gap-[5ch] lg:gap-[0ch] xl:gap-[5ch] py-[10vh] lg:pt-0 overflow-hi dden`}>
                 
                 <div className={`flex flex-col gap-4 lg:w-10/12 rounded-tl-3xl justify-center `}>
-                    <h2 className={`text-5xl font-bold`}>{title}</h2>
-                    <div className={`tracking-wide leading-relaxed gap-2 flex flex-col`}>
-                        {
-                        desc.map((d, i) => (
-                                <p key={i}>{d}</p>
-                            ))
-                        }
-                    </div>
+                    <Parallax id={title}>
+                        <h2 className={`text-5xl font-bold`}>{title}</h2>
+                    </Parallax>
+                    <ParallaxRight id={title+'desc'}>
+                        <div className={`tracking-wide leading-relaxed gap-2 flex flex-col`}>
+                            {
+                            desc.map((d, i) => (
+                                    <p key={i}>{d}</p>
+                                ))
+                            }
+                        </div>
+                    </ParallaxRight>
 
-
-                <Button text={iconText} icon={icon} className={'w-fit'} color={'white'} type={'primary'} func={() => {
-                    scrollTo ?
-                    document.querySelector(`#${scrollTo}`).scrollIntoView({
-                        behavior: 'smooth'
-                    })
-                    : 
-                    navigate(navigateTo)
-                }}/>
+                <Parallax id={title+'button'}>
+                    <Button text={iconText} icon={icon} className={'w-fit'} color={'white'} type={'primary'} func={() => {
+                        scrollTo ?
+                        document.querySelector(`#${scrollTo}`).scrollIntoView({
+                            behavior: 'smooth'
+                        })
+                        : 
+                        navigate(navigateTo)
+                    }}/>
+                </Parallax>
 
                     
                 </div>
