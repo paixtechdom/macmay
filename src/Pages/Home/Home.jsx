@@ -6,12 +6,13 @@ import img2 from '../../assets/images/IMG_20231017_051342_945.jpg'
 import img3 from '../../assets/images/IMG_20231017_050251_923.jpg'
 import { ImageAndText } from "../../Components/ImageAndText";
 import { Get } from "./Get";
-import { Products } from "../Products/Products";
+import { FAQs, ServicesList } from "../../assets/Constant";
 
 const Home = () => {
-    const { setCurrentDropDown } = useContext(AppContext)
+    const { setCurrentDropDown, setCurrentNav } = useContext(AppContext)
     useEffect(() => {
         setCurrentDropDown('')
+        setCurrentNav(0)
     }, [])
     return(
         <main className="flex flex-col min-h-screen z-10 w-full gap-9">
@@ -24,10 +25,8 @@ const Home = () => {
                 desc={['Lorem ipi vel quibusdam enim reiciendis quos soluta a distinctio, magnam sit architecto nesciunt reprehenderit at quidem tempore neque natus harum blanditiis commodi.', 'Lorit at quidem tempore neque natus harum blanditiis commodi.']}
                 iconText={'Read more'}
                 icon={'arrow-down'}
-                bg={'green'}
-            />
-            <Get />
-
+                />
+            <Get data={ServicesList} title={['Our', 'Services']}/>
             <ImageAndText 
                 id={'trying'}
                 title={'This and That Title'}
@@ -36,9 +35,10 @@ const Home = () => {
                 iconText={'Read more'}
                 icon={'arrow-down'}
                 bg={'blue'}
-            />
-            <Products />
-           
+                color={'white'}
+                />
+            
+            <Get data={FAQs} title={['Frequently', 'Asked', 'Questions', '(FAQs)']}/>
 
             <ImageAndText 
                 id={'tryingsnd'}
@@ -48,6 +48,7 @@ const Home = () => {
                 iconText={'Read more'}
                 icon={'arrow-down'}
                 bg={'green'}
+                color={'white'}
             />
 
             

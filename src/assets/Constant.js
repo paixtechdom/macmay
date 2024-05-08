@@ -17,18 +17,18 @@ const NavInfo = [
         title: 'About',
         link: 'About',
         icon: 'person-fill',
-        sublinks: [
-            {
-                title: 'About Macmay',
-                link: '',
-                icon: ''
-            },
-            {
-                title: 'Our Leaders',
-                link: 'Leaders',
-                icon: ''
-            },
-        ]
+        // sublinks: [
+        //     {
+        //         title: 'About Macmay',
+        //         link: '',
+        //         icon: ''
+        //     },
+        //     {
+        //         title: 'Our Leaders',
+        //         link: 'Leaders',
+        //         icon: ''
+        //     },
+        // ]
     },
     {
         title: 'Companies',
@@ -54,36 +54,93 @@ const NavInfo = [
     },
     {
         title: 'Products',
-        link: 'statistics',
-        icon: 'bar-chart-line-fill',
+        link: 'Products',
+        icon: 'shop',
        
     },
     {
         title: 'Contact',
-        link: 'tickets',
+        link: 'contact-us',
         icon: 'telephone-fill',
     },
 ]
 
 const HeroContent = [
     {
-        title: 'Macmay Multifarious Company',
+        title: 'Macmay Group',
+        // title: 'Macmay Multifarious Company',
         desc: 'We are a company which recognises the general lack of proper saving culture and investment practice amongst members of the society and we have stepped in to bridge the gap.',
         img: investing,
-        color: 'blue'
+        color: 'blue',
+        text: 'white'
     },
     {
-        title: 'Macmay Farms & Agro Company',
+        title: 'Macmay Farms & Agro',
         desc: 'We are available to render our service to as many people that will be in need of Agricultural products, and also for the purpose of buying and selling locally and internationally as well as investing in any related Agriculture reforms.',
         img: foodProcessing,
-        color: 'green'
+        color: 'green',
+        text: 'white'
     },
     {
         title: 'Macmay Foods',
         desc: 'We are engaged with the business of manufacturing nutritious and tasty food made from the best of West Africa’s fruits, herbs, vegetables, and other agricultural produce.',
         img: heroFood,
-        color: 'orange'
+        color: 'orange',
+        text: 'black'
     }
+]
+const ServicesList = [
+    {
+        title: 'Savings',
+        desc: 'We create unique and specific savings portfolios tailored to suit the specific needs of target clients'
+    },
+    {
+        title: 'Investments',
+        desc: 'We developing easy investment schemes that can be easily keyed into.'
+    },
+    {
+        title: 'Agriculture',
+        desc: 'We design strategic ways of investing in Agriculture and General Agriculture Services.'
+    },
+    {
+        title: 'Agro Services',
+        desc: 'Giving access to Agricultural Finance and related. We grow high value/quality Agricultural sales'
+    },
+    {
+        title: 'Food Manufacturing',
+        desc: 'We design strategic systems to aid quality food production process. We also carry out food Packaging and branding in line with international best practices'
+    },
+    {
+        title: 'Food Supply',
+        desc: 'We create a strategic food partnership and investment system that will enhance a more effective food supply chain process management'
+    }
+]
+
+const FAQs = [
+    {
+        title: 'Lorem 20',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, delectus! Laborum iusto aliquam necessitatibus voluptatem expedita obcaecati velit voluptatibus vel pariatur'
+    },
+    {
+        title: 'Lorem 20',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, delectus! Laborum iusto aliquam necessitatibus voluptatem expedita obcaecat'
+    },
+    {
+        title: 'Lorem 20',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, delectus! Laborum iusto aliquam necessitatibus voluptatem expedita obcaecati velit voluptatibus '
+    },
+    {
+        title: 'Lorem 20',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, delectus! Laborum iusto aliquam necessitatibus voluptatem expedita obcaecati velit voluptatibus '
+    },
+    {
+        title: 'Lorem 20',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, delectus! Laborum iusto aliquam necessitatibus voluptatem expedita obcaecati velit voluptatibus '
+    },
+    {
+        title: 'Lorem 20',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, delectus! Laborum iusto aliquam necessitatibus voluptatem expedita obcaecati velit voluptatibus '
+    },
 ]
 
 const ContactInfo = [
@@ -116,4 +173,4 @@ const ContactInfo = [
 
 
 
-export { NavInfo, Logo, HeroContent, ContactInfo }
+export { NavInfo, Logo, HeroContent, ContactInfo, ServicesList, FAQs }

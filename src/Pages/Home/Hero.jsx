@@ -7,21 +7,14 @@ import 'react-lazy-load-image-component/src/effects/opacity.css'
 import { AppContext } from "../../App"
 
 export const Hero = () => {
-    const { setNavBg, scrolledDown, setScrolledDown } = useContext(AppContext)
+    const { scrolledDown, setScrolledDown } = useContext(AppContext)
     const [ currentSlide, setCurrentSlide ] = useState(0)
     const [startX, setStartX ] = useState(0)
     const sliderRef = useRef(null)
 
-    useEffect(() => {
-        if(document.documentElement.scrollTop <= 400){
-            setNavBg(HeroContent[currentSlide].color)
-        }
-        
-    }, [document.documentElement.scrollTop])
     
     useEffect(() => {
         if(!scrolledDown){
-            setNavBg(HeroContent[currentSlide].color)
         }
         const int = setInterval(() => {
             slide()
@@ -45,80 +38,84 @@ export const Hero = () => {
             setCurrentSlide(currentSlide === HeroContent.length - 1 ? 0 : prev => prev + 1 )
         }
     }
-
-
-
+    
+    
+    
     return(
-        <section className="h-fit lg:h-screen w-full center relative overflow-hidden bg-white">
-            <div className="absolute hidden lg:block lg:flex flex w-full justify-between items-center z-20">
-                <div className="bi bi-chevron-left text-5xl text-gray-300 cursor-pointer h-[250px] center rounded-full w-[100px] lg:w-[150px] p-6 rounded-r-3xl transition-all duration-1000 hover:bg-black hover:bg-opacity-20"  onClick={() => setCurrentSlide(currentSlide == 0 ? HeroContent.length - 1 : prev => prev - 1)}></div>
+        <>
+            <section className="h-fit lg:h-screen w-full center relative overflow-hidden bg-white">
 
-                <div className="bi bi-chevron-right text-5xl text-gray-300 cursor-pointer h-[250px] center rounded-full w-[100px] lg:w-[150px] p-6 rounded-l-3xl transition-all duration-1000 hover:bg-black hover:bg-opacity-20"  onClick={() => slide()
-                    }>
-                    
+                {/* <div className={`absolute bg-green w-[300px] h-[300px] left-0 -translate-x-[200px] top-[60%] rounded-full transition-all duration-1000`}></div> */}
+
+                <div className="absolute hidden lg:block lg:flex flex w-full justify-between items-center z-20">
+                    <div className="bi bi-chevron-left text-5xl text-gray-300 cursor-pointer h-[250px] center rounded-full w-[100px] lg:w-[150px] p-6 rounded-r-3xl transition-all duration-1000 hover:bg-black hover:bg-opacity-20"  onClick={() => setCurrentSlide(currentSlide == 0 ? HeroContent.length - 1 : prev => prev - 1)}></div>
+
+                    <div className="bi bi-chevron-right text-5xl text-gray-300 cursor-pointer h-[250px] center rounded-full w-[100px] lg:w-[150px] p-6 rounded-l-3xl transition-all duration-1000 hover:bg-black hover:bg-opacity-20"  onClick={() => slide()
+                        }>
+                        
+                    </div>
                 </div>
-            </div>
-            <div className="center w-full absolute top-[80vh] md:top-[90vh] z-40">
-                <div className={`center gap-3 bg-blue-900 border border-${HeroContent[currentSlide].color} bg-${HeroContent[currentSlide].color}-fade p-4 rounded-full px-9`}>
-                    {
-                        HeroContent.map((i, j) => (
-                            <p key={j} className={`${currentSlide == j ? `h-4 lg:h-5 w-4 lg:w-5 bg-${i.color}` : 'w-3 h-3 bg-white'} border border-${HeroContent[currentSlide].color} rounded-full transition-all duration-500 cursor-pointer`} onClick={() => setCurrentSlide(j)}></p>
-                        ))
-                    }
+                <div className="center w-full absolute top-[80vh] md:top-[90vh] z-40">
+                    <div className={`center gap-3 bg-blue-900 border border-orange bg-orange-fade p-4 rounded-full px-9`}>
+                        {
+                            HeroContent.map((i, j) => (
+                                <p key={j} className={`${currentSlide == j ? `h-4 lg:h-5 w-4 lg:w-5 bg-orange ${i.color}` : 'w-3 h-3 bg-white'} border border-orange rounded-full transition-all duration-500 cursor-pointer`} onClick={() => setCurrentSlide(j)}></p>
+                            ))
+                        }
+                    </div>
                 </div>
-            </div>
 
-            <div className={`absolute h-[85vh] bg-${HeroContent[currentSlide].color}-fade  w-[1300px] scale-[2] -translate-y-[350px] bottom-0 rounded-b-full z-0 transition-all duration-1000`}></div>
 
-            
-            <div className="w-11/12 lg:w-10/12 h-full" ref={sliderRef} onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}>
+                
+                <div className="w-11/12 lg:w-10/12 h-full" ref={sliderRef} onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}>
 
-                <div className="flex flex-col lg:flex-row justify-center items-center transition-all duration-1000 h-full w-full gap-[10ch] mt-[20vh] lg:mt-0" style={{
+                    <div className="flex flex-col lg:flex-row justify-center items-center transition-all duration-1000 h-full w-full gap-[10ch] mt-[15vh] lg:mt-0" style={{
 
-                }}>
-                    {
-                        HeroContent.map((d, i) => (
-                            i == currentSlide &&
-                            <div key={i} className="flex relative lg:w-9/12 h-full center">
-                                <div className="w-full z-10 h-full z-20 flex items-center justify-start">
-                                    <div className="w-full flex flex-col gap-4">
-                                        <h1 className={`text-blue ${d.color} font-bold text-5xl lg:text-6xl font-b old`}>{d.title}</h1>
-                                        <p className={`text-blue text- sm lg:text-lg tracking-wide leading-relaxed`}>{d.desc}</p>
-                                        <div className="flex flex-col md:flex-row gap-5">
-                                            <Button text={'Learn More'} className={'w-fit'}/>
-                                            <Button text={'Contact Us'} className={'w-fit'} type={'primary'} icon={'telephone-fill'}/>
+                    }}>
+                        {
+                            HeroContent.map((d, i) => (
+                                i == currentSlide &&
+                                <div key={i} className="flex relative lg:w-9/12 h-full center">
+                                    <div className="w-full z-10 h-full z-20 flex items-center justify-start">
+                                        <div className="w-full flex flex-col gap-4">
+                                            <h1 className={`text-blue font-bold text-5xl lg:text-6xl font-b old`}>{d.title}</h1>
+                                            <p className={`text-blue text- sm lg:text-lg tracking-wide leading-relaxed`}>{d.desc}</p>
+                                            <div className="flex flex-col md:flex-row gap-5">
+                                                <Button text={'Learn More'} className={'w-fit'} color={'blue'}/>
+                                                <Button text={'Contact Us'} className={'w-fit'} type={'primary'} icon={'telephone-fill'} color={'white'}/>
+
+                                            </div>
 
                                         </div>
 
                                     </div>
 
                                 </div>
-
-                            </div>
-                        ))
-                    }
-
-                    <div className="relative w-full lg:w-6/12 h-[55vh] lg:h-[50vh] flex flex-col">
-                        {
-                            HeroContent.map((d, i) => (
-                                <div key={i} className={`absolute center overflow-hidden w-full h-full rounded-xl transition-all duration-500 bg-${d.color}-fade ${currentSlide == i ? `shadow-${d.color}` : 'opacity-40'} border border-${d.color} z-10`} style={{
-                                    zIndex: currentSlide == i ? 30 : 20,
-                                    transform: currentSlide == i ? 'rotate(0)' : `rotate(-${i*7}deg)`
-                                }}>
-                                    <LazyLoadImage
-                                        src={d.img} 
-                                        placeholderSrc="Hero Image 1" 
-                                        className="w-full h-fit"
-                                        effect="blur"    
-                                    />
-                                </div>
                             ))
                         }
 
+                        <div className="relative w-full lg:w-6/12 max- h-[55vh] lg:h-[50vh] flex flex-col">
+                            {
+                                HeroContent.map((d, i) => (
+                                    <div key={i} className={`absolute center overflow-hidden w-full h-full rounded-xl transition-all duration-500 ${currentSlide == i ? `-${d.color}` : 'opacity-10'} ${d.color} z-10`} style={{
+                                        zIndex: currentSlide == i ? 30 : 20,
+                                        transform: currentSlide == i ? '' : `rotate(-${i*65}deg) scale(0.2)`
+                                    }}>
+                                        <LazyLoadImage
+                                            src={d.img} 
+                                            placeholderSrc="Hero Image 1" 
+                                            className="w-full h-fit rounded-xl"
+                                            effect="blur"    
+                                        />
+                                    </div>
+                                ))
+                            }
+
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     )
 }

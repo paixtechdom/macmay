@@ -1,10 +1,15 @@
 import React, { useState, createContext, useEffect, Suspense } from 'react'
 import { createBrowserRouter, RouterProvider, Outlet, Link } from 'react-router-dom';
 import './assets/styles/index.css'
+import PageNotFound from './Components/PageNotFound';
+import { Loader } from './Components/Loader';
 
-const Home = React.lazy(() => delayLoad(import('./Pages/Home/Home')))
-const Footer = React.lazy(() => delayLoad(import('./Components/Main/Footer')))
 const NavBar = React.lazy(() => delayLoad(import('./Components/Main/Navbar')))
+const Home = React.lazy(() => delayLoad(import('./Pages/Home/Home')))
+const Products = React.lazy(() => delayLoad(import('./Pages/Products/Products')))
+const About = React.lazy(() => delayLoad(import('./Pages/About/About')))
+const Contact = React.lazy(() => delayLoad(import('./Pages/Contact/Contact')))
+const Footer = React.lazy(() => delayLoad(import('./Components/Main/Footer')))
 
 
 
@@ -12,7 +17,7 @@ const NavBar = React.lazy(() => delayLoad(import('./Components/Main/Navbar')))
 
 function delayLoad(promise) {
   return new Promise(resolve => {
-    setTimeout(resolve, 0);
+    setTimeout(resolve, 3000);
   }).then(() =>promise);
 }
 
@@ -20,7 +25,6 @@ export const AppContext = createContext()
 
 const Layout = () =>{ 
   const [ currentNav, setCurrentNav ] = useState(0)
-  const [ navBg, setNavBg ] = useState('blue')
   const [ currentDropDown, setCurrentDropDown ] = useState('')
   const [ scrolledDown, setScrolledDown ] = useState(false)
 
@@ -29,12 +33,12 @@ const Layout = () =>{
   return(
     <div className='app'>
 
-      <AppContext.Provider value={{ currentNav, setCurrentNav, navBg, setNavBg, currentDropDown, setCurrentDropDown, scrolledDown, setScrolledDown }}>
+      <AppContext.Provider value={{ currentNav, setCurrentNav, currentDropDown, setCurrentDropDown, scrolledDown, setScrolledDown }}>
         <Suspense fallback={<></>}>
           <NavBar />
         </Suspense>
 
-          <div className='d-flex w-full min-h-screen'>
+          <div className='d-flex w-full min-h-[50vh]'>
             <Outlet />
           </div>
           
@@ -55,14 +59,38 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: 
-        <React.Suspense fallback={<div className='center h-screen bg-gray-300'>Loading...</div>}>
+        <React.Suspense fallback={<Loader />}>
           <Home />
+        </React.Suspense>
+      },
+      {
+        path: '/About',
+        element: 
+        <React.Suspense fallback={<Loader />}>
+          <About />
+        </React.Suspense>
+      },
+      {
+        path: '/Products',
+        element: 
+        <React.Suspense fallback={<Loader />}>
+          <Products />
+        </React.Suspense>
+      },
+      {
+        path: '/contact-us',
+        element: 
+        <React.Suspense fallback={<Loader />}>
+          <Contact />
         </React.Suspense>
       },
      
       {
         path: '/*',
-        element: <p>Hello world</p>
+        element:
+          <React.Suspense fallback={<Loader />}>
+            <PageNotFound />
+          </React.Suspense>
       }
     ]
   }

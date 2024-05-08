@@ -1,0 +1,10 @@
+
+export const Card = ({children, data}) => {
+    return(
+            <div className="flex center bg-white flex-col rounded-xl overflow-hidden md:h-[40vh] shadow-xl">
+                <img src={data.img} alt={data.title + "'s Image"} className='w-full md:h-[30vh]'/>
+                {children}
+            </div>
+
+    )
+}
