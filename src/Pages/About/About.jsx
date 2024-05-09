@@ -9,43 +9,18 @@ import { ImageAndText } from '../../Components/ImageAndText'
 import { PagesHero } from '../../Components/PagesHero'
 import { BreadCrumbs } from '../../Components/BreadCrumbs'
 import { Parallax, ParallaxRight } from '../../Components/Parallax'
+import { Get } from '../Home/Get'
+import { ServicesList, Visions, Missions, LeadersList, LogoGroup } from '../../assets/Constant'
 
 
 const About = () => {
-    const Leaders = [
-        {
-            title: 'Lorem',
-            img: img
-        },
-        {
-            title: 'Lorem',
-            img: img2
-        },
-        {
-            title: 'Lorem',
-            img: img3
-        },
-        {
-            title: 'Lorem',
-            img: img
-        },
-        {
-            title: 'Lorem',
-            img: img2
-        },
-        {
-            title: 'Lorem',
-            img: img3
-        },
-        {
-            title: 'Lorem',
-            img: img
-        },
-    ]
-    const { setCurrentNav } = useContext(AppContext)
+
+    const { setCurrentNav, setLogo } = useContext(AppContext)
 
     useEffect(() => {
         setCurrentNav(1)
+        document.documentElement.scrollTop = 0
+        setLogo(LogoGroup)
     }, [])
 
     return(
@@ -55,44 +30,43 @@ const About = () => {
                 id={'testing'}
                 title={'About Macmay Group'}
                 img={img}
-                desc={['Lorem ipi vel quibusdam enim reiciendis quos soluta a distinctio, magnam sit architecto nesciunt reprehenderit at quidem tempore neque natus harum blanditiis commodi.', 'Lorit at quidem tempore neque natus harum blanditiis commodi.']}
+                desc={['Macmay Group is made up of Macmay Multifarious Company limited, Macmay Farms And Agro Company Ltd, MFAC Foods Ltd and an Enterprise, Macmay Innovative Resources.']}
                 iconText={'Read more'}
                 icon={'arrow-down'}
             />
             <BreadCrumbs links={['Home', 'About']}/>
-            <ImageAndText 
-                id={'testing'}
-                title={'Our Vision'}
-                img={img}
-                desc={['Lorem ipi vel quibusdam enim reiciendis quos soluta a distinctio, magnam sit architecto nesciunt reprehenderit at quidem tempore neque natus harum blanditiis commodi.', 'Lorit at quidem tempore neque natus harum blanditiis commodi.']}
-                iconText={'Read more'}
-                icon={'arrow-down'}
-            />
-           <div className="w-11/12 lg:w-10/12 flex flex-col my-[10vh] gap-[5vh]">
+            <Get data={ServicesList} title={['Our', 'Services']}/>
+
+           <section className="w-11/12 lg:w-10/12 flex flex-col my-[10vh] gap-[5vh]">
                 <Title text={'OUR LEADERS'} />
-                <div className="grid md:grid-cols-3 xl:grid-cols-4 gap-9 md:gap-3 xl:gap-9">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-9 xl:gap-9">
                     {
-                        Leaders.map((p, i) => (
-                            <Card key={i} data={p}  children={
-                            <div className="flex text-center h-[10vh] justify-center text-blue flex-col w-full">
-                                <h4 className='text-xl font-bold'>{p.title}</h4>
-                                <p>DR. Tiamiyu Collins</p>
-                            </div>
-                            }/>
+                        LeadersList.map((p, i) => (
+                            <Card key={i} data={p} id={p.name}  
+                                children={
+                                    <div className="flex text -center lg:h- [10vh] justify-center text-blue flex-col w-11/12 py-5 ">
+                                    <p>{p.name}</p>
+                                    <h4 className='text-xl font-bold'>{p.title}</h4>
+                                </div>
+                            }
+                        />
                             
                         ))
                     }
                 </div>
 
-            </div>
+            </section>
+            <Get data={Visions} title={['Our', 'Vision']}/>
+
             <ImageAndText 
                 id={'testing'}
-                title={'Our Mission'}
+                title={'Our Story'}
                 img={img}
-                desc={['Lorem ipi vel quibusdam enim reiciendis quos soluta a distinctio, magnam sit architecto nesciunt reprehenderit at quidem tempore neque natus harum blanditiis commodi.', 'Lorit at quidem tempore neque natus harum blanditiis commodi.']}
+                desc={['The Company was incorporated in Nigeria under the Companies And Allied Matters Act of 1990 firstly as an enterprise on January 4th, 2019,  established on 2nd December, 2018. On November 16th, 2020 it was incorporated as a limited Company.', ' Macmay Multifarious Company Limited has birthed other affiliates which are: Macmay Farms And Agro Company Ltd incorporated on the 26th Of March, 2021 established on the 15th of October, 2020 and MFAC Foods Limited which was incorporated on the 25th Of May, 2021 and established on the 15th day of March, 2021.']}
                 iconText={'Read more'}
                 icon={'arrow-down'}
             />
+            <Get data={Missions} title={['Our', 'Mission']}/>
         </div>
     )
 }

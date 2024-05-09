@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react"
 import { ContactForm } from "./ContactForm"
 import { AppContext } from "../../App"
-import { NavInfo } from "../../assets/Constant"
+import { LogoGroup, NavInfo } from "../../assets/Constant"
 import { PagesHero } from "../../Components/PagesHero"
 import img from '../../assets/images/planet-capital-contact-us.jpg'
 import { BreadCrumbs } from "../../Components/BreadCrumbs"
@@ -9,9 +9,10 @@ import { Get } from "../Home/Get"
 
 
 const Contact = () => {
-    const { setCurrentNav } = useContext(AppContext)
+    const { setCurrentNav, setLogo } = useContext(AppContext)
     useEffect(() => {
         setCurrentNav(NavInfo.length - 1)
+        setLogo(LogoGroup)
     }, [])
 
     return(

@@ -31,7 +31,7 @@ export const ImageAndText = ({id, title, desc, img,  iconText, icon, scrollTo, n
 
                 
                 <Parallax id={title+'button'}>
-                    <Button text={iconText} icon={icon} className={'w-fit'} color={'white border-white'} func={() => {
+                    <Button text={iconText} icon={icon} className={'w-fit'} color={'white border-white'} type={'on-green'} func={() => {
                         scrollTo ?
                         document.querySelector(`#${scrollTo}`).scrollIntoView({
                             behavior: 'smooth'

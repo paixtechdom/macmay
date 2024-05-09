@@ -1,12 +1,16 @@
 import { Parallax } from "./Parallax"
 
-export const Card = ({children, data}) => {
+export const Card = ({children, data, id}) => {
     return(
-        <Parallax id={data.title}>
+        <Parallax id={id ? id : data.title}>
 
-            <div className="flex center bg-white flex-col rounded-xl overflow-hidden md:h-[40vh] shadow-xl">
+            <div className="flex h-fit justify-start items-center bg-white flex-col rounded-xl overflow-hidden shadow-xl">
                 
-                <img src={data.img} alt={data.title + "'s Image"} className='w-full md:h-[30vh]'/>
+                <div className="overflow-hidden flex items-start justify-between h-full lg:h-[50vh]">
+                    <img src={data.img} alt={data.title + "'s Image"} className='w-fit h-fit'/>
+                </div>
+
+
                 {children}
             </div>
         </Parallax>

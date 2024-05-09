@@ -46,7 +46,7 @@ export const Hero = () => {
         <>
             <section className="h-fit lg:h-screen w-full center relative overflow-hidden bg-white">
 
-                <div className={`absolute  shadow-blue w-[2000px]  h-[1500px]  -translate-y-[900px] top-0 rounded-full transition-all duration-1000 bg-gray-50`}></div>
+                <div className={`absolute  shadow-blue w-[2000px]  h-[1500px]  -translate-y-[900px] top-0 rounded-full transition-all duration-1000 border border-blue bg-blue-fade opacity-20`}></div>
 
                 <div className="absolute hidden lg:block lg:flex flex w-full justify-between items-center z-20">
                     <div className="bi bi-chevron-left text-5xl text-gray-300 cursor-pointer h-[250px] center rounded-full w-[100px] lg:w-[150px] p-6 rounded-r-3xl transition-all duration-1000 hover:bg-black hover:bg-opacity-20"  onClick={() => setCurrentSlide(currentSlide == 0 ? HeroContent.length - 1 : prev => prev - 1)}></div>

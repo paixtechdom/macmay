@@ -7,6 +7,12 @@ const Parallax = ({children, id, clas}) => {
                     .replaceAll('-', '')
                     .replaceAll('(', '')
                     .replaceAll(')', '')
+                    .replaceAll(';', ' ')
+                    .replaceAll("'", '')
+                    .replaceAll(',', '')
+                    .replaceAll('.', '')
+                    .replaceAll('/', '')
+                    .replaceAll('?', '')
     const [ isPosMatch, setIsPosMatch ] = useState(false)
     useEffect(() =>{
         
@@ -42,8 +48,14 @@ const ParallaxRight = ({children, id, clas}) => {
     const newId = id
                     .replaceAll(' ', '')
                     .replaceAll('-', '')
-                    .replaceAll('', '')
+                    .replaceAll('(', '')
                     .replaceAll(')', '')
+                    .replaceAll(';', '')
+                    .replaceAll('?', '')
+                    .replaceAll("'", '')
+                    .replaceAll(',', '')
+                    .replaceAll('.', '')
+                    .replaceAll('/', '')
     const [ isPosMatch, setIsPosMatch ] = useState(false)
     useEffect(() =>{
         

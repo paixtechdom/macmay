@@ -4,7 +4,7 @@ export const BreadCrumbs = ({links}) => {
     return(
         <section className="w-full center">
 
-            <div className="border border-blue w-11/12 lg:w-10/12 xl:w-9/12 flex justify-start items-center p-3 pl-[20px] rounded-full mb-[10vh]">
+            <div className="bor der border- blue w-11/12 lg:w-10/12 xl:w-9/12 flex justify-start items-center p-3 pl-[20px] rounded-full mb-[10vh] flex-wrap shadow-xl">
                 {
                     links.map((link, i) => (
                         i == 0 ?
@@ -12,7 +12,7 @@ export const BreadCrumbs = ({links}) => {
                             {link}
                             <i className={`bi bi-chevron-right mx-2`}></i>
                         </Link>  :
-                        <div key={i} className="text-green font-bold text-xl cursor-pointer">
+                        <div key={i} className="text-blue font-bold text-xl cursor-pointer">
                             {link}
                         </div> 
                     ))

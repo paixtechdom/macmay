@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Logo, NavInfo } from '../../assets/Constant'
+import { NavInfo } from '../../assets/Constant'
 import { AppContext } from '../../App'
 
 const NavBar = () => {
     const [ showNav, setShowNav ] = useState(false)
     const [ text, setText ] = useState('blue')
 
-    const { isLoggedIn, currentNav, setCurrentNav, currentDropDown, setCurrentDropDown, scrolledDown, setScrolledDown } =useContext(AppContext)
+    const { currentDropDownIndex, currentNav, setCurrentNav, currentDropDown, setCurrentDropDown, scrolledDown, setScrolledDown, logo } =useContext(AppContext)
 
 
     useEffect(() => {
@@ -25,10 +25,10 @@ const NavBar = () => {
             <div className="flex items-center justify-between w-11/12 lg:w-10/12">
 
                 <Link to={'/'} className='w-3/12 md:w-4/12'>
-                    <img src={Logo} alt="Macmay Logo" className='w-4/12 md:w-2/12'/>
+                    <img src={logo} alt="Macmay Logo" className='w-4/12 md:w-2/12'/>
                 </Link>
 
-                <i className={`bi bi-${showNav ? 'x-lg' : 'list'} text-${text} text-2xl lg:hidden`} onClick={() => {
+                <i className={`bi bi-${showNav ? 'x-lg' : 'list'} text-${text} text-2xl lg:hidden cursor-pointer`} onClick={() => {
                     setShowNav(!showNav)
                 }}></i>
 
@@ -64,7 +64,7 @@ const NavBar = () => {
                                         {/**** NAVS WITH SUBLINKS */}
                                         {
                                             nav.sublinks ?
-                                            <div className={`flex flex-col gap-3 w-full overflow-hidden transition-all duration-200 lg:duration-1000 lg:absolute lg:min-w-[200px] lg:shadow-xl lg:gap-1 bg-gray-200 lg:rounded-b-lg lg:absolute z-0
+                                            <div className={`flex flex-col gap-1 w-full overflow-hidden transition-all duration-200 lg:duration-1000 lg:absolute lg:min-w-[300px] lg:shadow-xl lg:gap-1 bg-gray-200 lg:rounded-b-lg lg:absolute z-0
                                             
                                             ${currentDropDown == nav.title ? 'lg:border lg:border-blue lg:border-t-0 block  mb-7 lg:top-[7vh] ' : 'h-0 lg:h-fit text-[0px] mb-0 lg:-top-[250px]'}
                                             
@@ -72,12 +72,18 @@ const NavBar = () => {
         
                                                 {   
                                                     nav?.sublinks?.map((sublink, j) => (
-                                                        <Link to={`/${nav.link}/${sublink.link}`} key={j} className={`flex gap-5 py-3 lg:py-5 bg-white hover:bg-gray-100  w-full px-8 lg:px-0 lg:p-2 text-sm transition-all duration-500 text-${text}`} onClick={() => {setShowNav(false)
+                                                        <Link to={`/${nav.link}/${sublink.link}`} key={j} className={`flex gap-5 py-3 lg:py-5 bg-white hover:bg-gray-100  w-full px-8 lg:px-0 lg:p-2 text-sm transition-all duration-500
+                                                        ${
+                                                            currentNav == 2 && 
+                                                            currentDropDownIndex == j ? 'text-green' :
+                                                            `text-${text}`
+                                                        }
+                                                         `} onClick={() => {setShowNav(false)
                                                             setCurrentNav(i)
                                                           setCurrentDropDown('')
                                                         }}>
-                                                        <i className={`bi bi-${sublink.icon} text-secondary`}></i>
-                                                        <p className={`text-${text}`}>{sublink.title}</p>
+                                                        <i className={`bi bi-${sublink.icon}`}></i>
+                                                        <p className={``}>{sublink.title}</p>
                                                     </Link>
                                                     ))
                                                 }

@@ -43,15 +43,11 @@ export const PagesHero = ({id, title, desc, img,  iconText, icon, scrollTo, navi
                     
                 </div>
                 
-                <div className={'w-full lg:w-5/12 flex lg:items-center justify-center relative'}>
-                    {/* <div className={`absolute w-full h-full -right-[15px]  scale-90`} style={{
-                        boxShadow: '0px 15px 10px 5px rgba(0,0,0,0.4)'
-                    }}></div> */}
-
+                <div className={'w-full lg:w-5/12 flex lg:items-center justify-center relative lg:h-[60vh] overflow-hidden rounded-xl'}>
                     <LazyLoadImage
                         src={img} 
                         placeholderSrc={'Image to describe ' + title} 
-                        className={` w-full h-full rounded-3xl`}
+                        className={`w-full h-full rounded-3xl`}
                         effect='blur'
                         
                     />
