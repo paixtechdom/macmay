@@ -18,14 +18,14 @@ const Parallax = ({children, id, clas}) => {
     useEffect(() =>{
         
         const pos = document.querySelector(`#${newId}`).getBoundingClientRect()
-        if(pos.top < 700){
+        if(pos.top < 900){
             setIsPosMatch(true)
         }      
         
     }, [])
     const handleScroll = () => {
         const pos = document.querySelector(`#${newId}`).getBoundingClientRect()
-        if(pos.top < 700){
+        if(pos.top < 900){
             setIsPosMatch(true)
         }  
       
@@ -62,14 +62,14 @@ const ParallaxRight = ({children, id, clas}) => {
     useEffect(() =>{
         
         const pos = document.querySelector(`#${newId}`).getBoundingClientRect()
-        if(pos.top < 700){
+        if(pos.top < 900){
             setIsPosMatch(true)
         }      
         
     }, [])
     const handleScroll = () => {
         const pos = document.querySelector(`#${newId}`).getBoundingClientRect()
-        if(pos.top < 700){
+        if(pos.top < 900){
             setIsPosMatch(true)
         }  
       

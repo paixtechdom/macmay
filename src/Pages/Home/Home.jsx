@@ -80,7 +80,7 @@ const Home = () => {
 
 
                 <div className="center">
-                    <Button type={'primary'} text={'SEE ALL'} icon={'chevron-right'} className={'w-fit px-[150px]'} color={'white'} func={() => {
+                    <Button type={'primary'} text={'SEE ALL'} icon={'chevron-right'} className={'w-fit px-9 lg:px-[150px]'} color={'white'} func={() => {
                         navigate('/Products')
                     }}/>
                 </div>
