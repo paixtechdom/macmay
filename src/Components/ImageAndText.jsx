@@ -50,7 +50,7 @@ export const ImageAndText = ({id, title, desc, img,  iconText, icon, scrollTo, n
                 
                 {/* <ParallaxRight id={title+'image'} clas={'lg:w-7/12'}> */}
                     <div className={'w-full lg:w-7/12 flex lg:items-center justify-center relative rotate-[5deg]'}>
-                        <div className={`absolute w-full h-full -right-[15px]  scale-90`} style={{
+                        <div className={`absolute w-full min-h-[20vh] h-full -right-[15px]  scale-90`} style={{
                             boxShadow: '0px 15px 10px 5px rgba(0,0,0,0.4)'
                         }}></div>
 
