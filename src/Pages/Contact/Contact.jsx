@@ -122,9 +122,9 @@ const Contact = () => {
 
 const Contacts = ({title, data}) => {
     return(
-        <div className="flex flex-col gap-1 w-full">
+        <div className="flex flex-col flex-wrap gap-1 w-full">
             <Parallax id={title}>
-                <h3 className="font-bold text-blue text-xl tracking-wide leading-relaxed">{title}</h3>
+                <h3 className="font-bold flex flex-wrap text-blue text-xl tracking-wide leading-relaxed">{title}</h3>
 
             </Parallax>
             <div className="flex w-full gap-7 text-xl text-blue">
@@ -142,7 +142,7 @@ const Contacts = ({title, data}) => {
                 data.map((nav, i) =>(
                     nav.title &&         
                     <ParallaxRight key={i} id={title+nav.icon}>
-                        <a href={nav.link} key={i} className="text-blue flex gap-3 w-full justify-start">
+                        <a href={nav.link} key={i} className="text-blue flex-col md:flex-row flex gap-3 w-full justify-start">
                             <i className={`bi bi-${nav.icon}`}></i>
                             {nav.title}
                         </a>
