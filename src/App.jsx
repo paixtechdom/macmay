@@ -22,7 +22,7 @@ const Footer = React.lazy(() => delayLoad(import('./Components/Main/Footer')))
 
 function delayLoad(promise) {
   return new Promise(resolve => {
-    setTimeout(resolve, 30000);
+    setTimeout(resolve, 3000);
   }).then(() =>promise);
 }
 
