@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import img from '../../assets/images/IMG_20231017_045825_4862.jpg'
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import { Parallax, ParallaxRight } from "../../Components/Parallax"
+import { AppContext } from "../../App"
 
 
 export const ContactForm = () => {
@@ -11,21 +12,36 @@ export const ContactForm = () => {
     const [ message, setMessage ] = useState('')
     const [ sending, setSending ] = useState(false)
 
+    const {  setAlert, setAlertMessage, setAlertType } = useContext(AppContext)
+
+    const alert = (isSent) => {
+        setAlert(true)
+        setAlertMessage(isSent ? 'A response will be sent to the email provided' : 'There was an error sending your message, kindly try again')
+        setAlertType(isSent ? 'success' : 'error')
+        setName(isSent ? '' : name)
+        setEmail(isSent ? '' : email)
+        setSubject(isSent ? '' : subject)
+        setMessage(isSent ? '' : message)
+    }
+
 
     return(
-        <form action="" className="center flex-col w-11/12 lg:w-10/12">
+        <form id="contactform" action="" className="center flex-col w-11/12 lg:w-10/12" onSubmit={(e) => {
+            e.preventDefault()
+            alert(false)
+            }}>
             
             <div className="center flex-col lg:flex-row w-full gap-[100px]">
-                <div className="flex flex-col w-full gap-5 lg:w-6/12 shadow-xl p-9 rounded-3xl">
-                    <h2 className="text-5xl font-bold text-green w-full mb-[5vh]">Send Us A Message</h2>
+                <div className="flex flex-col w-full gap-5 lg:w-7/12 shadow-xl p-9 rounded-3xl">
+                    <h2 className="text-4xl lg:text-5xl font-bold text-green w-full mb-[5vh]">Send Us A Message</h2>
                     <Parallax id={'name'}>
-                        <FormInput value={name} setValue={setName} icon={'person-fill'} label={'Full Name (Required)'} htmlFor={'Name'} type={'text'}/>
+                        <FormInput value={name} setValue={setName} icon={'person-fill'} label={'Full Name (Required)'} htmlFor={'Name'} type={'text'} isRequired={true}/>
                     </Parallax>
                     <ParallaxRight id={'email'}>
-                        <FormInput value={email} setValue={setEmail} icon={'envelope-fill'} label={'Email (Required)'} htmlFor={'Email'} type={'email'}/>
+                        <FormInput value={email} setValue={setEmail} icon={'envelope-fill'} label={'Email (Required)'} htmlFor={'Email'} type={'email'} isRequired={true}/>
                     </ParallaxRight>
-                    <Parallax id={'subject'}>
-                        <FormInput value={subject} setValue={setSubject} icon={'person-fill'} label={'Subject'} htmlFor={'Subject'} type={'text'}/>
+                    <Parallax id={'messagesubject'}>
+                        <FormInput value={subject} setValue={setSubject} icon={'file-text'} label={'Subject'} htmlFor={'Subject'} type={'text'} isRequired={false}/>
                     </Parallax>
 
                     <ParallaxRight id={'message'}>
@@ -39,11 +55,11 @@ export const ContactForm = () => {
                             <textarea value={message} onChange={(e) => {
                                 setMessage(e.target.value)
                             }} 
-                            className="w-full outline-none bg-transparent px-4 text-blue min-h-[15vh] max-h-[15vh]  rounded-xl w-full shadow-xl bg-gray-100"></textarea>
+                            className="w-full outline-none bg-transparent px-4 text-blue min-h-[15vh] max-h-[15vh]  rounded-xl w-full shadow-xl bg-gray-100" required></textarea>
                         </div>
                     </ParallaxRight>
                     <Parallax id={'send'}>
-                        <div className="w-full bg-blue mt-4 shadow-xl bg-gray-100 rounded-2xl h-[8vh] center text-xl text-white">
+                        <button type="submit" className="w-full bg-blue mt-4 shadow-xl bg-gray-100 rounded-2xl h-[8vh] center text-xl text-white transition-all duration-500 hover:scale-90 active:scale-90">
                             {
                                 sending ? 'Sending Message' : 
                                     <>
@@ -52,18 +68,20 @@ export const ContactForm = () => {
                                     </>
                             }
 
-                        </div>
+                        </button>
                     </Parallax>
 
                 </div>
 
-                <div className="lg:w-6/12 flex justify-center lg:justify-end items-center">
-                   <LazyLoadImage 
-                        src={img} 
-                        placeholderSrc="Macmay Logo for Contact Image" 
-                        className="rounded-2xl shadow-2xl w-9/12"
-                        effect="blur"
-                    />
+                <div className="lg:w-5/12 center justify-center lg:justify-end items-center">
+                    <ParallaxRight id={'macmayicon'} clas={'w-9/12'}>
+                        <LazyLoadImage 
+                            src={img} 
+                            placeholderSrc="Macmay Logo for Contact Image" 
+                            className="rounded-2xl shadow-2xl w-full"
+                            effect="blur"
+                        />
+                    </ParallaxRight>
                 </div>
 
 
@@ -76,7 +94,7 @@ export const ContactForm = () => {
 
 
 
-const FormInput = ({value, setValue, icon, label, htmlFor, type}) => {
+const FormInput = ({value, setValue, icon, label, htmlFor, type, isRequired}) => {
     return(
         <div className="center flex-col w-full gap-2">
             <div className="flex w-full items-center gap-3">
@@ -88,7 +106,9 @@ const FormInput = ({value, setValue, icon, label, htmlFor, type}) => {
             <input type={type} value={value} onChange={(e) => {
                 setValue(e.target.value)
             }} 
-            className="w-full outline-none bg-transparent px-4 text-blue shadow-xl bg-gray-100 rounded-xl h-[7vh] w-full"/>
+            className="w-full outline-none bg-transparent px-4 text-blue shadow-xl bg-gray-100 rounded-xl h-[7vh] w-full"
+            required={isRequired}
+            />
         </div>
     )
 }

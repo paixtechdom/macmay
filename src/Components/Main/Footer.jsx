@@ -5,7 +5,7 @@ import { AppContext } from '../../App'
 import { Parallax } from "../Parallax";
 
 const Footer = () => {
-    const { currentNav } = useContext(AppContext)
+    const { currentNav, currentDropDownIndex } = useContext(AppContext)
     return(
         <div className="center flex-col w-full min-h-[70vh] mt-[20vh] relative pt-[15vh]">
             <div className="absolute top-0 left-0 w-full h-full bg-blue-fade opacity-20 z-10">
@@ -23,7 +23,13 @@ const Footer = () => {
                     <h3 className="font-bold text-blue text-3xl tracking-wide leading-relaxed">Navigation</h3>
                     {
                         NavInfo.map((nav, i) =>(
-                            <Link key={i} className={`${currentNav == i ? 'font-bold text-green text-xl' : ''}`}>{nav.title}</Link>
+                            i !== 2 ?
+                            <Link key={i} to={`/${nav.link}`} className={`${currentNav == i ? 'font-bold text-green text-xl' : ''}`}>{nav.title}</Link> : ''
+                        ))
+                    }
+                    {
+                        NavInfo[2].sublinks.map((nav, i) =>(
+                            <Link key={i} to={`/Companies/${nav.link}`} className={`${currentDropDownIndex == i && currentNav == 2 ? 'font-bold text-green text-xl' : ''}`}>{nav.title}</Link>
                         ))
                     }
                 </nav>

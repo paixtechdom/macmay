@@ -4,6 +4,7 @@ import './assets/styles/index.css'
 import PageNotFound from './Components/PageNotFound';
 import { Loader } from './Components/Loader';
 import { LogoGroup } from './assets/Constant';
+import { Alert } from './Components/Alert';
 
 const NavBar = React.lazy(() => delayLoad(import('./Components/Main/Navbar')))
 const Home = React.lazy(() => delayLoad(import('./Pages/Home/Home')))
@@ -33,6 +34,9 @@ const Layout = () =>{
   const [ currentDropDownIndex, setCurrentDropDownIndex ] = useState(4)
   const [ scrolledDown, setScrolledDown ] = useState(false)
   const [ showScrollTop, setShowScrolledTop ] = useState(false)
+  const [ alert, setAlert ] = useState(false)
+  const [ alertMessage, setAlertMessage ] = useState('')
+  const [ alertType, setAlertType ] = useState('')
   const [ logo, setLogo ] = useState(LogoGroup)
 
   useEffect(() => {
@@ -42,12 +46,19 @@ const Layout = () =>{
     document.removeEventListener('scroll', () => null)
 }, [])
 
+  useEffect(() => {
+    if(alert){
+      document.body.style.overflow = 'hidden'
+    }else{
+      document.body.style.overflowY = 'scroll'
+    }
+  }, [alert])
 
 
   return(
     <div id='top' className='app'>
 
-      <AppContext.Provider value={{ currentNav, setCurrentNav, currentDropDown, setCurrentDropDown, scrolledDown, setScrolledDown, currentDropDownIndex, setCurrentDropDownIndex, logo, setLogo }}>
+      <AppContext.Provider value={{ currentNav, setCurrentNav, currentDropDown, setCurrentDropDown, scrolledDown, setScrolledDown, currentDropDownIndex, setCurrentDropDownIndex, logo, setLogo, alert, setAlert, alertMessage, setAlertMessage, alertType, setAlertType }}>
         <Suspense fallback={<></>}>
           <NavBar />
         </Suspense>
@@ -55,8 +66,13 @@ const Layout = () =>{
           {/* <div className='d-flex w-full min-h-[50vh]'> */}
             <Outlet />
           {/* </div> */}
+
+          { 
+            alert ?
+            <Alert /> : ''
+          }
           
-          <div className={`center fixed  lg:bottom-[100px] bottom-9 h-[60px] w-[60px] z-50 bg-blue-100 bg-opacity-60 border border-blue shadow-blue rounded-3xl cursor-pointer transition-all duration-1000 ${showScrollTop ? 'right-9 lg:right-[100px]' : '-right-[100%]'}`} onClick={() => {
+          <div className={`center fixed  lg:bottom-[100px] bottom-9 h-[60px] w-[60px] z-50 bg-blue-fade shadow-xl rounded-3xl cursor-pointer transition-all duration-1000 ${showScrollTop ? 'right-9 lg:right-[100px]' : '-right-[100%]'}`} onClick={() => {
             document.querySelector('#top').scrollIntoView({
               behavior: 'smooth'
             })
@@ -120,7 +136,7 @@ const router = createBrowserRouter([
         </React.Suspense>
       },
       {
-        path: '/contact-us',
+        path: '/Contact',
         element: 
         <React.Suspense fallback={<Loader />}>
           <Contact />

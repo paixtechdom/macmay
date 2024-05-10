@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Logo } from "../assets/Constant"
+import Logo from "../assets/images/logo.svg"
 
 
 export const Loader = () => {

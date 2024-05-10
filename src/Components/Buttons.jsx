@@ -10,7 +10,15 @@ export const Button = ({text, func, type, icon, className, color}) => {
             onMouseOut={() => {
                 setHovered(false)
             }}
-            onClick={() => func()}
+            onClick={() => {
+                func()
+                setHovered(true)
+                setTimeout(() => {
+                    setHovered(false)
+                }, (500));
+
+            }}
+
         >
             <button 
                 className={` ${

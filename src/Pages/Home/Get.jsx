@@ -10,9 +10,9 @@ export const Get = ({data, title}) => {
 
    
     return(
-        <section id='whatyouget' className="w-full center my-[10vh] lg:screen">
+        <section id={title[1]} className="w-full center py-[15vh] lg:screen">
             <div className="flex flex-col lg:flex-row justify-between w-11/12 lg:w-10/12 h-full gap-[9vh] lg:gap-0  bg-blue -fade p-6 py-[15vh]  lg:p-9 rounded-3xl">
-                <div className="flex flex-col w-full lg:w-6/12 justify-center items-end text-5xl pr-3 text-white font-bold border-r border-orange gap-3">
+                <div className="flex flex-col w-full lg:w-6/12 justify-center items-end text-4xl lg:text-5xl pr-3 text-white font-bold border-r border-orange gap-3">
                     {
                         title.map((t, i) => (
                             <Parallax id={t} key={i}>
@@ -33,8 +33,8 @@ export const Get = ({data, title}) => {
                                         }}>
                                         <h3 className='w-full'>{g.title}</h3>
                                         {
-                                            g.desc &&
-                                            <i className={`bi bi-${currentGet == i ? 'eye-slash-fill' : 'eye-fill'}`} ></i>
+                                            g.desc && data.length > 1 ?
+                                            <i className={`bi bi-${currentGet == i ? 'eye-slash-fill' : 'eye-fill'}`} ></i> : ''
                                         }
                                     </div>
                                     {

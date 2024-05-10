@@ -32,13 +32,13 @@ const NavBar = () => {
                     setShowNav(!showNav)
                 }}></i>
 
-                <div className={`w-full flex justify-center items-start  transition-all duration-1000 fixed top-[10vh] h-screen lg:relative lg:top-0 lg:w-fit lg:h-fit ${showNav ? ' left-0 z-40' : '-left-[100%] lg:-left-0'}`}>
-                        <nav className={`flex flex-col lg:flex-row items-center w-full h-screen lg:gap-9 lg:h-fit lg:bg-transparent bg-white lg:justify-between transition-all duration-1000`}>
+                <div className={`w-full flex justify-center items-start  transition-all duration-1000 fixed top-[10vh] h-screen lg:relative lg:top-0 lg:w-fit lg:h-fit ${showNav ? ' left-0 z-40' : '-left-[100%] lg:-left-0'}  bg-white`}>
+                        <nav className={`flex flex-col lg:flex-row items-center w-full h-screen lg:gap-9 lg:h-fit lg:bg-transparent lg:justify-between transition-all duration-1000`}>
                             {
                                 NavInfo.map((nav, i) => (
                                     <div key={i} className={`flex flex-col transition-all duration-1000 justify-between w-full text-${text}  border-b border-gray-200 lg:border-0 relative`}>
 
-                                        <div className={`flex w-full lg:w-fit p-5 lg:p-0 justify-between cursor-pointer ${currentNav === i ? 'text-green text-xl font-bold lg:bg-transparent lg:hover:border-b border-green' : 'text-secondary hover:bg-gray-200 lg:hover:bg-transparent border-blue lg:hover:border-b'}`} onClick={() => {
+                                        <div className={`flex w-full lg:w-fit py-5 px-[5%] lg:p-0 justify-between cursor-pointer ${currentNav === i ? 'text-green text-xl font-bold lg:bg-transparent lg:hover:border-b border-green' : 'text-secondary hover:bg-gray-200 lg:hover:bg-transparent border-blue lg:hover:border-b'}`} onClick={() => {
                                             if( nav.sublinks){
                                                 setCurrentDropDown(currentDropDown === nav.title ? '' : nav.title) 
 
@@ -94,7 +94,7 @@ const NavBar = () => {
                             }
                         </nav>
         
-                        <div className="h-full lg:hidden bg-transparent w-[60%] lg:w-[60%] xl:w-[70%]" onClick={ ()=> setShowNav(!showNav)}>
+                        <div className="h-full lg:hidden bg-transparent w-0 md:w-[60%]" onClick={ ()=> setShowNav(!showNav)}>
                         
                         </div>
         

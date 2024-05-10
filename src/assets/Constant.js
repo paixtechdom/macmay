@@ -5,6 +5,8 @@ import LogoFoods from '../assets/images/logoFood.png'
 import LogoGroup from '../assets/images/LogoGroup.png'
 import heroFood from '../assets/images/IMG_20231017_050256_344.jpg'
 import investing from '../assets/images/pexels-anna-nekrashevich-6802048.jpg'
+import agroinvesting from '../assets/images/agroinvesting.png'
+import mfac from '../assets/images/mfac.png'
 import foodProcessing from '../assets/images/pexels-mark-stebnicki-2255920.jpg'
 import farm from '../assets/images/pexels-math-21393.jpg'
 import img3 from '../assets/images/IMG_20231017_050251_923.jpg'
@@ -18,6 +20,7 @@ import prosper from '../assets/images/prosper.jpeg'
 import destiny from '../assets/images/destiny.jpeg'
 import samuel from '../assets/images/samuel.jpeg'
 import charlotte from '../assets/images/charlotte.jpeg'
+import services2 from '../assets/images/services-2.jpg'
 
 
 
@@ -30,19 +33,8 @@ const NavInfo = [
     {
         title: 'About',
         link: 'About',
-        icon: 'person-fill',
-        // sublinks: [
-        //     {
-        //         title: 'About Macmay',
-        //         link: '',
-        //         icon: ''
-        //     },
-        //     {
-        //         title: 'Our Leaders',
-        //         link: 'Leaders',
-        //         icon: ''
-        //     },
-        // ]
+        icon: 'person-circle -fill',
+        // icon: 'info-circle',
     },
     {
         title: 'Companies',
@@ -66,27 +58,14 @@ const NavInfo = [
             },
         ]
     },
-    // {
-    //     title: 'Services',
-    //     link: 'Services',
-    //     icon: 'shop',
-       
-    // },
-    // {
-    //     title: 'Leaders',
-    //     link: 'Services',
-    //     icon: 'shop',
-       
-    // },
     {
         title: 'Products',
         link: 'Products',
-        icon: 'shop',
-       
+        icon: 'grid',
     },
     {
         title: 'Contact',
-        link: 'contact-us',
+        link: 'Contact',
         icon: 'telephone-fill',
     },
 ]
@@ -95,7 +74,7 @@ const HeroContent = [
     {
         title: 'Macmay Group',
         desc: 'Macmay Group is a fast growing indigenous company with principal focus on delivering professional support services in the upstream subsector of the Finance, Agro-Agriculture, Food Chain Distribution, Real Estates And General Merchants in Nigeria and Africa at large.',
-        img: investing,
+        img: agroinvesting,
         color: 'blue',
         text: 'white'
     },
@@ -264,12 +243,12 @@ const Missions = [
     {
         title: 'MFAC Foods LTD',
         desc: 'To render World Class Professional Food Processing And Manufacturing Services through Direct Production, Manufacturing And Investment/Partnership Schemes geared towards creating Financial Stability and Economic Growth for Nation Building and Global impact.'
-    },
+    }
 ]
 
 const LegalFrameWorks = [
     {
-        img: investing,
+        img: LogoMultifarious,
         desc :  [
             'Macmay Multifarious Company Ltd, began in 2018 and was registered as Business Name in 2018/2019 as Macmay Innovative Resources. As the Company increased in its scope of operation, it became necessary to review its achievements vis-à-vis its legal framework. This review led to an upgrading and restructuring of Macmay.',
             'Hence, in 2020 Macmay became registered as a bigger corporate entity, with the name Macmay Multifarious Company Limited.',
@@ -277,13 +256,13 @@ const LegalFrameWorks = [
         ]
     },
     {
-        img: foodProcessing,
+        img: LogoFarms,
         desc:  [
                 'Macmay Farms And Agro Company Ltd, began in 2020, initiated by Macmay Multifarious  Company LTD and it was registered as a LTD Company according to Companies And Allied Matters  Act (CAMA) specification in 2021 under the Corporate Affairs Commission of Nigeria(CAC) as Macmay Farms And Agro Company LTD with Registration Number, RC 1776278.This upgrade brought Macmay Farms And Agro Company LTD to the status of a Limited Company in Nigeria.'
             ],
     },
     {
-        img: heroFood,
+        img: LogoFoods,
         desc:  [
             'MFAC Foods Ltd; was registered as a LTD Company in accordance with the Companies and Allied Matters Act (CAMA) specification in 2021 under the Corporate Affairs Commission of Nigeria(CAC) as MFAC Foods Ltd with Registration Number, RC 1797591.'
         ]
@@ -291,7 +270,7 @@ const LegalFrameWorks = [
 ]
 const ScopeOfService = [
     {
-        img: investing,
+        img: services2,
         desc: [
             'Our services includes business/market development survey, identifying viably business opportunity, investing in profitable ventures, monitoring and following up on investment to ensure security/ productivity and providing value for money.', 
             "The crux of our services is designing, creating and presenting very easy, flexible and unique plans that specifically suits the purpose/affordability of our various investors. It our mandate to ensure that our clients are happy and satisfied. We therefore continuously utilise the endless opportunities that the business world provides."
@@ -305,7 +284,7 @@ const ScopeOfService = [
         ]
     },
     {
-        img: heroFood, 
+        img: mfac, 
         desc: [
                 "MFAC Foods LTD, is a company built by purpose driven goal getters with a vast knowledge in the Food Production Sector, and is aimed at delivering food production, branding and packaging services in line with international best practices.",
                 "We are aimed to provide a market store where people can shop for products within the comfort of their home, all of these will pose us a better service from Sales to Marketing to delivery.  Our product line consists of spices, spreads, sauces, food flour, fruit juices and complementary food that excites and satisfy institutional, commercial and retail customers and more."
@@ -429,11 +408,11 @@ const ContactInfo = [
     },
     {
         icon: 'whatsapp',
-        link: '  +2348111779288'
+        link: 'https://api.whatsapp.com/send?phone=2348111779288'
     },
     {
         icon: 'facebook',
-        link: '  officialmacmaymultifariousCoLtd'
+        link: 'https://www.facebook.com/officialmacmaymultifariousCoLtd'
     },
 
 ]
