@@ -32,7 +32,7 @@ const NavBar = () => {
                     setShowNav(!showNav)
                 }}></i>
 
-                <div className={`w-full flex justify-center items-start  transition-all duration-1000 fixed top-[10vh] h-screen lg:relative lg:top-0 lg:w-fit lg:h-fit ${showNav ? ' left-0 z-40' : '-left-[100%] lg:-left-0'}  bg-white`}>
+                <div className={`w-full flex justify-center items-start  transition-all duration-1000 fixed top-[10vh] h-screen lg:relative lg:top-0 lg:w-fit lg:h-fit ${showNav ? ' left-0 z-40' : '-left-[100%] lg:-left-0'} bg-white lg:bg-transparent`}>
                         <nav className={`flex flex-col lg:flex-row items-center w-full h-screen lg:gap-9 lg:h-fit lg:bg-transparent lg:justify-between transition-all duration-1000`}>
                             {
                                 NavInfo.map((nav, i) => (
