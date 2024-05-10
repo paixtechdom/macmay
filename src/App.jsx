@@ -56,7 +56,7 @@ const Layout = () =>{
 
 
   return(
-    <div id='top' className='app'>
+    <div id='top' className='app w-full'>
 
       <AppContext.Provider value={{ currentNav, setCurrentNav, currentDropDown, setCurrentDropDown, scrolledDown, setScrolledDown, currentDropDownIndex, setCurrentDropDownIndex, logo, setLogo, alert, setAlert, alertMessage, setAlertMessage, alertType, setAlertType }}>
         <Suspense fallback={<></>}>
