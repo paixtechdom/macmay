@@ -28,7 +28,7 @@ export const Get = ({data, title}) => {
                         data.map((g, i) => (
                             <ParallaxRight key={i} id={g.title+title[1]} clas={'lg:w-11/12'}>
                                 <div key={i} className="flex flex-col gap-1 overflow-hidden">
-                                    <div className="flex justify-start items-start font-bold text-xl gap-8 hover:bg-white hover:bg-opacity-10 transition-all duration-500 p-3 rounded-xl cursor-pointer w-full" onClick={() => {
+                                    <div className="flex justify-start items-start font-bold text-xl gap-4 md:gap-8 hover:bg-white hover:bg-opacity-10 transition-all duration-500 p-3 rounded-xl cursor-pointer w-full" onClick={() => {
                                             setCurrentGet(g.desc && currentGet == i ? 0 : i)
                                         }}>
                                         <h3 className='w-full'>{g.title}</h3>
