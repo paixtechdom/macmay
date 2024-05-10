@@ -38,7 +38,7 @@ const About = () => {
             <Get data={ServicesList} title={['Our', 'Services']}/>
 
            <section className="w-11/12 lg:w-10/12 flex flex-col my-[10vh] gap-[5vh]">
-                <Title text={'OUR LEADERS'} />
+                <Title text={'BOARD OF DIRECTORS'} />
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-9 xl:gap-9">
                     {
                         LeadersList.map((p, i) => (
