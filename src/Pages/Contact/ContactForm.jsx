@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import img from '../../assets/images/IMG_20231017_045825_4862.jpg'
+import img from '../../assets/images/IMG_20231017_045825_48622.jpg'
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import { Parallax, ParallaxRight } from "../../Components/Parallax"
 import { AppContext } from "../../App"
@@ -32,7 +32,7 @@ export const ContactForm = () => {
             }}>
             
             <div className="center flex-col lg:flex-row w-full gap-[100px]">
-                <div className="flex flex-col w-full gap-5 lg:w-7/12 shadow-xl p-9 rounded-3xl">
+                <div className="flex flex-col w-full gap-5 lg:w-7/12 shadow md:shadow-xl p-9 py-4 lg:p-9 rounded-3xl">
                     <h2 className="text-4xl lg:text-5xl font-bold text-green w-full mb-[5vh]">Send Us A Message</h2>
                     <Parallax id={'name'}>
                         <FormInput value={name} setValue={setName} icon={'person-fill'} label={'Full Name (Required)'} htmlFor={'Name'} type={'text'} isRequired={true}/>

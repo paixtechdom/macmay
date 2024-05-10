@@ -5,13 +5,23 @@ import LogoFoods from '../assets/images/logoFood.png'
 import LogoGroup from '../assets/images/LogoGroup.png'
 import heroFood from '../assets/images/IMG_20231017_050256_344.jpg'
 import investing from '../assets/images/pexels-anna-nekrashevich-6802048.jpg'
-import agroinvesting from '../assets/images/agroinvesting.png'
+import agroinvesting from '../assets/images/agroinvesting.jpg'
 import mfac from '../assets/images/mfac.png'
 import foodProcessing from '../assets/images/pexels-mark-stebnicki-2255920.jpg'
 import farm from '../assets/images/pexels-math-21393.jpg'
-import img3 from '../assets/images/IMG_20231017_050251_923.jpg'
-import img2 from '../assets/images/IMG_20231017_051342_945.jpg'
+import flour from '../assets/images/IMG_20231017_050251_923.jpg'
+import pap from '../assets/images/IMG_20231017_051342_945.jpg'
 import img from '../assets/images/IMG_20231017_051604_314.jpg'
+import soya from '../assets/images/IMG_20231017_051535_375.jpg'
+import tumeric from '../assets/images/IMG_20231017_051554_980.jpg'
+import ginger from '../assets/images/IMG_20231017_051604_314.jpg'
+import potato from '../assets/images/potato.jpg'
+import salt from '../assets/images/salt.jpg'
+import juice from '../assets/images/juice.jpg'
+import biscuit from '../assets/images/biscuit.jpg'
+import milk from '../assets/images/milk.jpg'
+import beverage from '../assets/images/beverage.jpg'
+
 import ceo from '../assets/images/ceo.jpeg'
 import coo from '../assets/images/coo.jpeg'
 import mercy from '../assets/images/mercy.jpeg'
@@ -128,44 +138,59 @@ const ServicesList = [
 ]
 const ProductsList= [
     {
+        title: 'Soya Bean Powder',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iure!',
+        img: soya
+    },
+    {
+        title: 'Tumeric Powder',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iure!',
+        img: tumeric
+    },
+    {
+        title: 'Ginger Powder',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iure!',
+        img: ginger
+    },
+    {
         title: 'Food',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iure!',
-        img: img
+        img: pap
     },
     {
         title: 'Flours',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iure!',
-        img: img2
+        img: flour
     },
     {
         title: 'Food Produce',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iure!',
-        img: img3
+        img: potato
     },
     {
         title: 'Salts',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iure!',
-        img: img
+        img: salt
     },
     {
         title: 'Juices',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iure!',
-        img: img2
+        img: juice
     },
     {
         title: 'Biscuits',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iure!',
-        img: img3
+        img: biscuit
     },
     {
         title: 'Milk and others',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iure!',
-        img: img
+        img: milk
     },
     {
-        title: 'Bevrages',
+        title: 'Beverages',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iure!',
-        img: img
+        img: beverage
     }
 ]
 

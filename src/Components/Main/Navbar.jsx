@@ -25,7 +25,7 @@ const NavBar = () => {
             <div className="flex items-center justify-between w-11/12 lg:w-10/12">
 
                 <Link to={'/'} className='w-3/12 md:w-4/12'>
-                    <img src={logo} alt="Macmay Logo" className='w-4/12 md:w-2/12'/>
+                    <img src={logo} alt="Macmay Logo" className='w-5/12 md:w-2/12'/>
                 </Link>
 
                 <i className={`bi bi-${showNav ? 'x-lg' : 'list'} text-${text} text-2xl lg:hidden cursor-pointer`} onClick={() => {

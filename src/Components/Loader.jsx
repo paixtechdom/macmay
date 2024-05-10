@@ -22,7 +22,7 @@ export const Loader = () => {
         <div className={`fixed bg-white center w-full h-screen top-0 left-0 flex-col z-50 transition-all durtion-[4s] opacity-${loaderOpacity}`}>
 
             <img src={Logo} alt="Macmay Logo" className="w-[70px]"/>
-            <p className="font-bold text-4xl text-blue">Macmay Group</p>
+            <p className="font-bold text-4xl text-blue text-center">Macmay Group</p>
 
             <div className="relative overflow-hidden flex-col h-2 rounded-full mt-4 bg-gray-200 w-7/12 md:w-5/12 lg:w-3/12">
 
