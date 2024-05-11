@@ -21,7 +21,7 @@ const NavBar = () => {
 
     return(
         <>
-        <header className={`center fixed w-full h-[10vh] z-50 transition-all duration-1000  ${scrolledDown ? `shadow-xl bg-white` : ''}`}>
+        <header className={`center fixed w-full left-0 top-0 h-[8vh] md:h-[10vh] z-50 transition-all duration-1000  ${scrolledDown ? `shadow-xl bg-white` : ''}`}>
             <div className="flex items-center justify-between w-11/12 lg:w-10/12">
 
                 <Link to={'/'} className='w-3/12 md:w-4/12'>
@@ -32,7 +32,7 @@ const NavBar = () => {
                     setShowNav(!showNav)
                 }}></i>
 
-                <div className={`w-full flex justify-center items-start  transition-all duration-1000 fixed top-[10vh] h-screen lg:relative lg:top-0 lg:w-fit lg:h-fit ${showNav ? ' left-0 z-40' : '-left-[100%] lg:-left-0'} bg-white lg:bg-transparent`}>
+                <div className={`w-full flex justify-center items-start  transition-all duration-1000 fixed top-[8vh] md:top-[10vh] h-screen lg:relative lg:top-0 lg:w-fit lg:h-fit ${showNav ? ' left-0 z-40' : '-left-[100%] lg:-left-0'} bg-white lg:bg-transparent`}>
                         <nav className={`flex flex-col lg:flex-row items-center w-full h-screen lg:gap-9 lg:h-fit lg:bg-transparent lg:justify-between transition-all duration-1000`}>
                             {
                                 NavInfo.map((nav, i) => (

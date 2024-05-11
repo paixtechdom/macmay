@@ -10,10 +10,10 @@ export const Alert = () =>{
         setShowAlert(true)
     }, [])
     return(
-        <div className="fixed z-50 top-0 left-0 h-screen w-full bg-black blue-200 bg-opacity-70 flex items-end justify-center">
+        <div className="fixed z-50 top-0 left-0 h-screen w-full bg-black blue-200 bg-opacity-70 flex items-end justify-center relative">
 
-            <div className={`w-full md:w-10/12 lg:w-7/12 bg-white center rounded-t-2xl shadow-blue transition-all duration-1000 ${showAlert ? '' : 'translate-y-[100%]'}`}>
-                <div className={`w-9/12 center flex-col gap-2 my-9 text-${alertType == 'success' ? 'green' : alertType == 'error' ? 'red-800' : ''}`}>
+            <div className={`absolute bottom-0 w-full md:w-10/12 lg:w-7/12 bg-white center rounded-t-2x shadow-blue transition-all duration-1000 ${showAlert ? '' : 'translate-y-[100%]'}`}>
+                <div className={`w-9/12 center flex-col gap-2 my-9 ${alertType == 'success' ? 'text-green' : alertType == 'error' ? 'text-red-800' : ''}`}>
                     <i className={`bi bi-${alertType == 'success' ? 'check' : alertType == 'error' ? 'x' : ''}-circle-fill text-6xl 
                     `}></i>
 

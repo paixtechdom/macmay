@@ -12,7 +12,7 @@ export const PagesHero = ({id, title, desc, img,  iconText, icon, scrollTo}) => 
     const navigate = useNavigate()
     return(
         
-        <section id={id} className={`flex justify-center text-blue h-fit items-center relative lg:h-[80vh] overflow-hidden pt-[10vh]`}>     
+        <section id={id} className={`flex justify-center text-blue h-fit items-center relative lg:h-[80vh] overflow-hidden pt-[8vh] md:pt-[10vh]`}>     
             <div className={`absolute  shadow-blue w-[1500px] lg:w-[2000px]  h-[1500px]  -translate-y-[1000px] top-0 rounded-full transition-all duration-1000 border border-blue bg-blue-fade opacity-20`}></div>  
 
             <div className={`cente r h-[90%] flex items-start lg:items-center z-10 flex-col lg:flex-row  w-11/12 lg:w-10/12 gap-[5ch] lg:gap-[0ch] xl:gap-[5ch] py-[10vh] lg:pt-0 overflow-hi dden`}>

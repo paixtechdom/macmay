@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import img from '../../assets/images/IMG_20231017_045825_48622.jpg'
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import { Parallax, ParallaxRight } from "../../Components/Parallax"
@@ -23,7 +23,10 @@ export const ContactForm = () => {
         setSubject(isSent ? '' : subject)
         setMessage(isSent ? '' : message)
     }
+    useEffect(() => {
+        alert(false)
 
+    }, [])
 
     return(
         <form id="contactform" action="" className="center flex-col w-11/12 lg:w-10/12" onSubmit={(e) => {
