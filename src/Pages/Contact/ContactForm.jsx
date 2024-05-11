@@ -24,7 +24,7 @@ export const ContactForm = () => {
         setMessage(isSent ? '' : message)
     }
     useEffect(() => {
-        alert(false)
+        // alert(false)
 
     }, [])
 
