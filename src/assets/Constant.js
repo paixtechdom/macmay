@@ -113,27 +113,27 @@ const HeroContent = [
 const ServicesList = [
     {
         title: 'Savings',
-        desc: 'We create unique and specific savings portfolios tailored to suit the specific needs of target clients'
+        desc: 'We create unique and specific savings portfolios tailored to suit the specific needs our clients.'
     },
     {
         title: 'Investments',
-        desc: 'We developing easy investment schemes that can be easily keyed into.'
+        desc: 'We develope easy investment schemes that can be easily keyed into.'
     },
     {
         title: 'Agriculture',
-        desc: 'We design strategic ways of investing in Agriculture and General Agriculture Services.'
+        desc: 'We design strategic ways of investing in Agriculture and General Agricultural Services.'
     },
     {
         title: 'Agro Services',
-        desc: 'Giving access to Agricultural Finance and related. We grow high value/quality Agricultural sales'
+        desc: 'Giving access to Agricultural Finance and related sectors, we grow high value/quality Agricultural sales.'
     },
     {
         title: 'Food Manufacturing',
-        desc: 'We design strategic systems to aid quality food production process. We also carry out food Packaging and branding in line with international best practices'
+        desc: 'We design strategic systems to aid quality food production process. We also carry out food Packaging and branding in line with international best practices.'
     },
     {
         title: 'Food Supply',
-        desc: 'We create a strategic food partnership and investment system that will enhance a more effective food supply chain process management'
+        desc: 'We create a strategic food partnership and investment system that will enhance a more effective food supply chain process management.'
     }
 ]
 const ProductsList= [
@@ -298,7 +298,7 @@ const ScopeOfService = [
         img: services2,
         desc: [
             'Our services includes business/market development survey, identifying viably business opportunity, investing in profitable ventures, monitoring and following up on investment to ensure security/ productivity and providing value for money.', 
-            "The crux of our services is designing, creating and presenting very easy, flexible and unique plans that specifically suits the purpose/affordability of our various investors. It our mandate to ensure that our clients are happy and satisfied. We therefore continuously utilise the endless opportunities that the business world provides."
+            "The crux of our services is designing, creating and presenting very easy, flexible and unique plans that specifically suits the purpose/affordability of our various investors. It is our mandate to ensure that our clients are happy and satisfied. We therefore continuously utilise the endless opportunities that the business world provides."
         ]
     },
     {
