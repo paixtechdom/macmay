@@ -59,8 +59,11 @@ const Footer = () => {
                 </nav>
             </div>
 
-            <div className="border-t-4 border-orange text-center mt-[10vh] h-[15vh] w-full center gap-2 text-blue z-30">
-                Copyright &copy; <strong className="text-xl font-bold">Macmay Group</strong> {new Date().getFullYear()} 
+            <div className="border-t-4 border-orange text-center mt-[10vh] h-[15vh] w-full center flex flex-col gap-2 text-blue z-30">
+                <p>
+                    Copyright &copy; <strong className="text-xl font-bold">Macmay Group</strong> {new Date().getFullYear()} 
+                </p>
+                <a href="https://paixtechdom.netlify.app">Designed by Paix Techdom</a>
             </div>
         </div>
     )
