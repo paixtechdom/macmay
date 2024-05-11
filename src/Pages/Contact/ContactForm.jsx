@@ -23,10 +23,9 @@ export const ContactForm = () => {
         setSubject(isSent ? '' : subject)
         setMessage(isSent ? '' : message)
     }
-    useEffect(() => {
+    // useEffect(() => {
         // alert(false)
-
-    }, [])
+    // }, [])
 
     return(
         <form id="contactform" action="" className="center flex-col w-11/12 lg:w-10/12" onSubmit={(e) => {
