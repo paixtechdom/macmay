@@ -121,7 +121,7 @@ const ServicesList = [
     },
     {
         title: 'Agriculture',
-        desc: 'We design strategic ways of investing in Agriculture and General Agricultural Services.'
+        desc: 'We design strategic ways of investing in Agriculture and General Agricultural Services. Giving access to Agricultural Finance and related sectors, we grow high value/quality Agricultural sales.'
     },
     {
         title: 'Exports',
@@ -131,14 +131,14 @@ const ServicesList = [
     //     title: 'Agro Services',
     //     desc: 'Giving access to Agricultural Finance and related sectors, we grow high value/quality Agricultural sales.'
     // },
-    // {
-    //     title: 'Food Manufacturing',
-    //     desc: 'We design strategic systems to aid quality food production process. We also carry out food Packaging and branding in line with international best practices.'
-    // },
-    // {
-    //     title: 'Food Supply',
-    //     desc: 'We create a strategic food partnership and investment system that will enhance a more effective food supply chain process management.'
-    // }
+    {
+        title: 'Food Manufacturing',
+        desc: 'We design strategic systems to aid quality food production process. We also carry out food Packaging and branding in line with international best practices.'
+    },
+    {
+        title: 'Food Supply',
+        desc: 'We create a strategic food partnership and investment system that will enhance a more effective food supply chain process management.'
+    }
 ]
 const ProductsList= [
     {
