@@ -11,7 +11,7 @@ export const Get = ({data, title}) => {
    
     return(
         <section id={title[1]} className="w-full center py-[15vh] lg:screen">
-            <div className="flex flex-col lg:flex-row justify-between w-11/12 lg:w-10/12 h-full gap-[9vh] lg:gap-0  bg-blue -fade p-6 py-[15vh]  lg:p-9 rounded-3xl">
+            <div className="flex flex-col lg:flex-row justify-between w-11/12 lg:w-10/12 h-full gap-[9vh] lg:gap-0  bg-blue p-6 py-[15vh]  lg:p-9 lg:py-[15vh] rounded-3xl">
                 <div className="flex flex-col w-full lg:w-6/12 justify-center items-end text-4xl lg:text-5xl pr-3 text-white font-bold border-r border-orange gap-3">
                     {
                         title.map((t, i) => (

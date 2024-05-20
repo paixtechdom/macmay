@@ -77,8 +77,8 @@ const Company = ({companyIndex}) => {
                 </div>
 
                 <div className="w-11/12 lg:w-10/12 flex items-center justify-start text-white my-[13vh]">
-                    <div className="w-full flex flex-col gap-8">
-                        <div className="w-full relative">
+                    <div className="w-full flex flex-col gap-4">
+                        <div className="w-full relative mb-6">
                             <div className="absolute -bottom-2 left-0 center h-[35px]">
                                 <Parallax id={'legalline'} clas={'center bg-orange w-32 /12 h-3 rounded-full'}>
                                 </Parallax>
@@ -91,7 +91,7 @@ const Company = ({companyIndex}) => {
                         </div>
                             {
                                 LegalFrameWorks[companyIndex].desc.map((d, i) => (
-                                    <ParallaxRight id={d[0]+d[1]+d[2]} clas={'flex flex-col mb-3 w-full lg:w-9/12'}>
+                                    <ParallaxRight id={d[0]+d[1]+d[2]} clas={'flex flex-col mb-1 w-full lg:w-9/12'}>
                                         <p key={i} className="tracking-wide leading-relaxed">{d}</p>
                                     </ParallaxRight>
 

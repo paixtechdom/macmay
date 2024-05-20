@@ -7,7 +7,7 @@ import { Parallax } from "../Parallax";
 const Footer = () => {
     const { currentNav, currentDropDownIndex } = useContext(AppContext)
     return(
-        <div className="center flex-col w-full min-h-[70vh] mt-[20vh] relative pt-[15vh]">
+        <div className="center parent flex-col w-full min-h-[70vh] mt-[20vh] relative pt-[15vh]">
             <div className="absolute top-0 left-0 w-full h-full bg-blue-fade opacity-20 z-10">
                 
             </div>

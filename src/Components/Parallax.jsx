@@ -37,7 +37,7 @@ const Parallax = ({children, id, clas}) => {
     }, [])
 
     return(
-        <div id={newId} className={`transition-all duration-1000 relative ${clas} ${isPosMatch ? '' : 'opacity-0 -translate-x-[100%]  scale-[0.2]'}`}>
+        <div id={newId} className={`transition-all duration-[2s] relative ${clas} ${isPosMatch ? '' : 'opacity-0 -translate-x-[10%]  scale-[0.2]'}`}>
                 {children}
         </div>
     )
@@ -81,7 +81,7 @@ const ParallaxRight = ({children, id, clas}) => {
     }, [])
 
     return(
-        <div id={newId} className={`transition-all duration-1000 relative ${clas} ${isPosMatch ? '' : 'opacity-0 translate-x-[100%] scale-[0.2]'}`}>
+        <div id={newId} className={`transition-all duration-[2s] relative ${clas} ${isPosMatch ? '' : 'opacity-0 translate-x-[10%] scale-[0.2]'}`}>
                 {children}
         </div>
     )

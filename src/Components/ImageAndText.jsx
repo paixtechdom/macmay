@@ -49,15 +49,15 @@ export const ImageAndText = ({id, title, desc, img,  iconText, icon, scrollTo, n
                 </div>
                 
                 {/* <ParallaxRight id={title+'image'} clas={'lg:w-7/12'}> */}
-                    <div className={'w-full lg:w-7/12 flex lg:items-center justify-center relative rotate-[5deg]'}>
-                        <div className={`absolute w-full min-h-[20vh] h-full -right-[15px]  scale-90`} style={{
-                            boxShadow: '0px 15px 10px 5px rgba(0,0,0,0.4)'
+                    <div className={'w-full lg:w-7/12 flex lg:items-center justify-center relative '}>
+                        <div className={`absolute w-full min-h-[20vh] h-full top-[15px] translate-x-[10px] scale-[0.9] rounded-b-xl`} style={{
+                            boxShadow: '0px 15px 10px 5px rgba(0,0,0,0.4)',
                         }}></div>
 
                         <LazyLoadImage
                             src={img} 
                             placeholderSrc={'Image to describe ' + title} 
-                            className={` w-full h-full -translate-x-[10px]  scale-90 -translate-y-[10px] rotate-[355deg]`}
+                            className={` w-full h-full -translate-x-[10px]  scale-90 -translate-y-[10px] rounded-b-xl`}
                             effect='blur'
                             
                         />

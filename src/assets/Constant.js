@@ -112,29 +112,33 @@ const HeroContent = [
 ]
 const ServicesList = [
     {
-        title: 'Savings',
-        desc: 'We create unique and specific savings portfolios tailored to suit the specific needs our clients.'
+        title: 'Low cost savings',
+        desc: 'We create unique and specific low savings portfolios tailored to suit the specific needs our clients.'
     },
     {
-        title: 'Investments',
-        desc: 'We develope easy investment schemes that can be easily keyed into.'
+        title: 'Real estates investments',
+        desc: 'We develop easy real estates investment schemes that can be easily keyed into.'
     },
     {
         title: 'Agriculture',
         desc: 'We design strategic ways of investing in Agriculture and General Agricultural Services.'
     },
     {
-        title: 'Agro Services',
-        desc: 'Giving access to Agricultural Finance and related sectors, we grow high value/quality Agricultural sales.'
+        title: 'Exports',
+        desc: 'Our services also include exports and imports, logistics of both goods and passengers and also food packaging and branding in line with international best practices.'
     },
-    {
-        title: 'Food Manufacturing',
-        desc: 'We design strategic systems to aid quality food production process. We also carry out food Packaging and branding in line with international best practices.'
-    },
-    {
-        title: 'Food Supply',
-        desc: 'We create a strategic food partnership and investment system that will enhance a more effective food supply chain process management.'
-    }
+    // {
+    //     title: 'Agro Services',
+    //     desc: 'Giving access to Agricultural Finance and related sectors, we grow high value/quality Agricultural sales.'
+    // },
+    // {
+    //     title: 'Food Manufacturing',
+    //     desc: 'We design strategic systems to aid quality food production process. We also carry out food Packaging and branding in line with international best practices.'
+    // },
+    // {
+    //     title: 'Food Supply',
+    //     desc: 'We create a strategic food partnership and investment system that will enhance a more effective food supply chain process management.'
+    // }
 ]
 const ProductsList= [
     {
