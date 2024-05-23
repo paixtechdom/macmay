@@ -72,13 +72,13 @@ const Layout = () =>{
             <Alert /> : ''
           }
           
-          <div className={`center fixed  lg:bottom-[100px] bottom-9 h-[60px] w-[60px] z-50 bg-blue-fade shadow-xl rounded-3xl cursor-pointer transition-all duration-1000 ${showScrollTop ? 'right-9 lg:right-[100px]' : '-right-[100%]'}`} onClick={() => {
+          {/* <div className={`center fixed  lg:bottom-[100px] bottom-9 h-[60px] w-[60px] z-50 bg-blue-fade shadow-xl rounded-3xl cursor-pointer transition-all duration-1000 ${showScrollTop ? 'right-9 lg:right-[100px]' : '-right-[100%]'}`} onClick={() => {
             document.querySelector('#top').scrollIntoView({
               behavior: 'smooth'
             })
           }}>
             <i className="bi bi-arrow-up text-2xl"></i>
-          </div>
+          </div> */}
         <Suspense fallback={<></>}>
           <Footer />
         </Suspense>
